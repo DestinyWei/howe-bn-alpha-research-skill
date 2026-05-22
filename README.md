@@ -2,6 +2,8 @@
 
 这个文档用于说明 `bn-alpha-research` skill 的使用方式，适合放到新的仓库作为 README / workflow 文档。
 
+English guide: [README.en.md](README.en.md)
+
 ## 作者与来源
 
 - 作者 / 整理：Howe
@@ -18,7 +20,8 @@
 
 ```text
 howe-bn-alpha-research-skill/
-├── README.md
+├── README.md                         # 中文默认文档
+├── README.en.md                      # English guide
 ├── SKILL.md
 ├── references/
 │   ├── bn-alpha-monitor-tool-notes.md
@@ -26,16 +29,20 @@ howe-bn-alpha-research-skill/
 │   └── report-format.md
 ├── templates/
 │   ├── alpha-report-template.md
-│   └── private-note-template.md
+│   ├── alpha-report-template.en.md
+│   ├── private-note-template.md
+│   └── private-note-template.en.md
 ├── examples/
-│   └── nexus-nex.md
+│   ├── nexus-nex.md
+│   └── nexus-nex.en.md
 ├── .env.example
 ├── .gitignore
 └── LICENSE
 ```
 
 - `SKILL.md`：Hermes / agent 可加载的核心 skill 定义。
-- `README.md`：面向仓库读者的完整使用说明。
+- `README.md`：面向仓库读者的中文默认使用说明。
+- `README.en.md`：英文使用说明。
 - `references/`：数据源、报告格式、盘前监控工具接入说明。
 - `templates/`：公开报告和私人备注模板。
 - `examples/`：示例输出。
