@@ -2,6 +2,18 @@
 
 这个文档用于说明 `bn-alpha-research` skill 的使用方式，适合放到新的仓库作为 README / workflow 文档。
 
+## 作者与来源
+
+- 作者 / 整理：Howe
+- X：https://x.com/0xcryptoHowe
+- Telegram Channel：https://t.me/cryptohowe_treasure
+- Telegram Group：https://t.me/cyrptohowe_discussion
+- 灵感来源：https://x.com/0xcryptoHowe/status/1982980551285121407
+
+这个 skill 是蒸馏并结合 Howe 上述推文，以及 Howe 个人 Telegram 频道中所有 Alpha 新币调研内容后，整理形成的一套 BN Alpha 新币 Pre-TGE 调研工作流。
+
+---
+
 ## 1. 用途
 
 `bn-alpha-research` 用于 Binance Alpha / BN Alpha Pre-TGE 新币调研，目标是生成可直接用于 Telegram 频道或研报草稿的中文 `#Alpha新币分析`。
