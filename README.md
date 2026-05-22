@@ -14,6 +14,35 @@
 
 ---
 
+## 仓库结构
+
+```text
+howe-bn-alpha-research-skill/
+├── README.md
+├── SKILL.md
+├── references/
+│   ├── bn-alpha-monitor-tool-notes.md
+│   ├── data-source-priority.md
+│   └── report-format.md
+├── templates/
+│   ├── alpha-report-template.md
+│   └── private-note-template.md
+├── examples/
+│   └── nexus-nex.md
+├── .env.example
+├── .gitignore
+└── LICENSE
+```
+
+- `SKILL.md`：Hermes / agent 可加载的核心 skill 定义。
+- `README.md`：面向仓库读者的完整使用说明。
+- `references/`：数据源、报告格式、盘前监控工具接入说明。
+- `templates/`：公开报告和私人备注模板。
+- `examples/`：示例输出。
+- `.env.example`：环境变量占位符；不要提交真实 `.env`。
+
+---
+
 ## 1. 用途
 
 `bn-alpha-research` 用于 Binance Alpha / BN Alpha Pre-TGE 新币调研，目标是生成可直接用于 Telegram 频道或研报草稿的中文 `#Alpha新币分析`。
