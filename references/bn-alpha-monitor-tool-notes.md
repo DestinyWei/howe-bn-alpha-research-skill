@@ -66,4 +66,9 @@ BSCSCAN_API_KEY=your_bscscan_api_key_here
 BN_ALPHA_MONITOR_DATA_DIR=./data/monitor_snapshots
 ```
 
+API 获取与额度：
+
+- Etherscan API：注册 / 登录后在 `https://etherscan.io/myapikey` 创建 key，文档见 `https://docs.etherscan.io/`。Etherscan API V2 支持通过 `chainid` 查询 ETH / BSC 等多链数据；本工具默认读取 `ETHERSCAN_API_KEY`，`BSCSCAN_API_KEY` 仅作为 BNB Chain 覆盖项。
+- Etherscan API 有免费额度，日常 BN Alpha 新币调研中的转账观察、合约辅助验证基本够用；只有高频自动监控或批量扫描时才通常需要更高额度。
+
 不要提交真实 `.env`。

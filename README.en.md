@@ -211,6 +211,17 @@ ROOTDATA_API_KEY=your_rootdata_api_key_here
 BN_ALPHA_MONITOR_DATA_DIR=./data/monitor_snapshots
 ```
 
+Where to get the API keys:
+
+- RootData API: apply for / enable OpenAPI from the RootData website. Start from the API docs: `https://www.rootdata.com/ApiDoc` or `https://cn.rootdata.com/ApiDoc`. It is used for project, team, funding, and investor data.
+- Etherscan API: register / log in to Etherscan and create a key on the API Keys page: `https://etherscan.io/myapikey`; docs: `https://docs.etherscan.io/`. Etherscan API V2 can query ETH / BSC and other chains via `chainid`; this workflow defaults to `ETHERSCAN_API_KEY`, with `BSCSCAN_API_KEY` as an optional BNB Chain override.
+
+Quota notes:
+
+- Both RootData API and Etherscan API provide free quota / free-tier usage.
+- For normal BN Alpha new-token research, team/funding checks, contract-transfer observation, and pool evidence verification, the free tiers are usually enough for daily use.
+- Consider paid tiers only if you later run high-frequency automated monitoring, scan many projects in bulk, or serve multiple users from one shared key.
+
 Rules:
 
 - Keep real keys only in local `.env` files or secure environment variables.

@@ -220,6 +220,8 @@ Explicit trading bands and valuation ranges belong here, not in the public body.
 - Never commit real API keys, tokens, secrets, `.env`, raw credentials, private keys, or seed phrases
 - Use `.env.example` placeholders only
 - If docs mention API variables, values must be placeholders like `your_etherscan_api_key_here`
+- RootData API keys can be requested / enabled from the RootData API docs: `https://www.rootdata.com/ApiDoc` or `https://cn.rootdata.com/ApiDoc`; RootData provides free quota suitable for normal daily project/team/funding lookups.
+- Etherscan API keys can be created after logging in at `https://etherscan.io/myapikey`; docs: `https://docs.etherscan.io/`. Etherscan API V2 provides free-tier usage that is usually enough for daily BN Alpha contract-transfer and explorer checks; configure it as `ETHERSCAN_API_KEY`, with `BSCSCAN_API_KEY` only as an optional BNB Chain override.
 - Run a secret scan before committing
 
 ## Common Pitfalls

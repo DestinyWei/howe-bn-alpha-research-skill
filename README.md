@@ -505,6 +505,17 @@ ROOTDATA_API_KEY=your_rootdata_api_key_here
 BN_ALPHA_MONITOR_DATA_DIR=./data/monitor_snapshots
 ```
 
+API 获取入口：
+
+- RootData API：在 RootData 官网申请 / 开通 OpenAPI，入口可从 RootData API 文档进入：`https://www.rootdata.com/ApiDoc` 或 `https://cn.rootdata.com/ApiDoc`。用于查询项目、团队、融资、投资人等信息。
+- Etherscan API：注册 / 登录 Etherscan 后，在 API Keys 页面创建 key：`https://etherscan.io/myapikey`；API 文档：`https://docs.etherscan.io/`。当前 Etherscan API V2 可通过不同 `chainid` 查询 ETH / BSC 等多链数据，本工具默认用 `ETHERSCAN_API_KEY`，如需单独覆盖 BNB Chain 可再配置 `BSCSCAN_API_KEY`。
+
+额度说明：
+
+- RootData API 和 Etherscan API 都有免费额度 / 免费层级可用。
+- 对日常 BN Alpha 新币调研、团队融资查询、合约转账观察、池子辅助验证来说，免费额度通常已经基本够用。
+- 如果后续做高频自动监控、批量扫大量项目、或多人共享服务，再考虑升级付费额度。
+
 规则：
 
 - 真实 API key 只放本地 `.env` 或安全环境变量。
