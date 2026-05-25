@@ -150,6 +150,12 @@ Avoid:
 
 ---
 
+## Funding Source Links
+
+Funding, incubation, public-sale, no-VC-allocation, valuation/FDV, and investor claims must include concrete source links in the report. Avoid vague labels like “RootData shows” without a URL.
+
+---
+
 ## Pre-Open Pool Monitoring Format
 
 The skill can use the local `bn-alpha-monitor` tool when available.
@@ -248,6 +254,7 @@ Rules:
 - [ ] BSC CA shown first when available
 - [ ] Founder LinkedIn links are attached directly to names
 - [ ] Tokenomics missing data is explicitly labeled
+- [ ] Funding/incubation/public-sale/no-VC claims include concrete source links
 - [ ] VC cost includes unit cost + FDV when calculable
 - [ ] Pool block uses monitor output where available
 - [ ] Main pool and depth-estimation pool are separated

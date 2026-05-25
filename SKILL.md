@@ -140,7 +140,7 @@ VC 成本：
 - 限制：...
 ```
 
-If valuation/allocation data is missing, do not force a VC cost.
+If valuation/allocation data is missing, do not force a VC cost. The financing section must include concrete source links for `raised`, `incubated by`, `backed by`, `public sale`, `no VC allocation`, valuation/FDV, and investor claims; do not rely on vague source labels only.
 
 ### 七、盘前价 / 池子价
 
@@ -246,6 +246,7 @@ Explicit trading bands and valuation ranges belong here, not in the public body.
 - [ ] Team limited to founders/co-founders by default
 - [ ] LinkedIn links directly on names
 - [ ] Tokenomics missing data labeled explicitly
+- [ ] Financing/incubation/public-sale claims include concrete source links
 - [ ] VC cost includes unit cost + FDV when computable
 - [ ] Pool block uses monitor output where available
 - [ ] Main pool and depth-estimation pool separated

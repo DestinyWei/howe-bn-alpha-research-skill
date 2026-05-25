@@ -307,6 +307,7 @@ VC 成本计算优先级：
 
 要求：
 
+- 融资 / 孵化 / public sale / no VC allocation / 估值 FDV 等说法必须附具体来源链接，不只写“RootData 显示”这类模糊标签。
 - 如果能算，必须同时写 unit cost 和对应 FDV。
 - 如果不能算，明确写 `无法计算`。
 - 公开版不展示主观买卖区间。
@@ -541,6 +542,7 @@ API 获取入口：
 - [ ] Team 只写 founders / co-founders
 - [ ] LinkedIn 直接挂在人名上
 - [ ] Tokenomics 缺失时明确写未披露
+- [ ] 融资 / 孵化 / public sale / no VC allocation 说法有具体来源链接
 - [ ] VC 成本包含 unit cost + FDV；无法计算时明确说明
 - [ ] 盘前 / 池子 block 接入 monitor 工具
 - [ ] 主池和深度估算池分开
