@@ -81,7 +81,7 @@ Keep it short. Include only:
 
 - Project name
 - `$SYMBOL`
-- Alpha/listing time in UTC+8
+- Alpha/listing/airdrop time in UTC+8, preferring Alpha123 hour-level time when available
 - One-sentence positioning
 
 Do not put detailed narrative, website, X, docs, tokenomics, or funding here.
@@ -193,11 +193,12 @@ See `references/data-source-priority.md` for the full source order.
 
 Short version:
 
-1. Binance Alpha / Alpha123 for listing discovery
-2. Official website/docs/X for authoritative project and CA claims
-3. CoinMarketCap for supply/contract metadata, cross-checked with official sources
-4. RootData and LinkedIn for team/funding
-5. Local `bn-alpha-monitor`, Dexscreener, GeckoTerminal, Dextools, and explorer APIs for pool/on-chain evidence
+1. Alpha123 first for hour-level Alpha/listing/airdrop time; treat its displayed time as UTC+8 unless explicitly stated otherwise
+2. Binance Alpha official page/API and official X for project/date cross-checking; a date-only X post should not overwrite Alpha123's hour-level time
+3. Official website/docs/X for authoritative project and CA claims
+4. CoinMarketCap for supply/contract metadata, cross-checked with official sources
+5. RootData and LinkedIn for team/funding
+6. Local `bn-alpha-monitor`, Dexscreener, GeckoTerminal, Dextools, and explorer APIs for pool/on-chain evidence
 
 ## Private Decision Note
 
@@ -233,12 +234,13 @@ Explicit trading bands and valuation ranges belong here, not in the public body.
 5. **Forcing VC cost.** If valuation/allocation data is absent, write `无法计算`.
 6. **Overloading the public channel body.** Keep detailed raw evidence in JSON/references, not the Telegram draft.
 7. **Publishing without confirmation.** Return a draft only unless explicitly asked to publish.
+8. **Misreading Alpha123 time zones.** Alpha123 times are treated as UTC+8 in this workflow. Do not convert them again as if they were UTC; if Alpha123 shows `20:00`, report `20:00 UTC+8`.
 
 ## Verification Checklist
 
 - [ ] `#Alpha新币分析` included
 - [ ] Project overview is short and uses `$SYMBOL`
-- [ ] Time normalized to UTC+8
+- [ ] Alpha/listing/airdrop time uses Alpha123 first when available and is normalized to UTC+8 without double conversion
 - [ ] Contract section before fundamentals
 - [ ] BSC CA first, CA + explorer only
 - [ ] Team limited to founders/co-founders by default

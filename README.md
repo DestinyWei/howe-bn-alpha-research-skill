@@ -26,7 +26,8 @@ howe-bn-alpha-research-skill/
 ├── references/
 │   ├── bn-alpha-monitor-tool-notes.md
 │   ├── data-source-priority.md
-│   └── report-format.md
+│   ├── report-format.md
+│   └── slx-solstice-ca-verification-2026-05-25.md
 ├── templates/
 │   ├── alpha-report-template.md
 │   ├── alpha-report-template.en.md
@@ -161,7 +162,7 @@ X：https://x.com/...
 
 - 项目名
 - Token / Symbol，symbol 前加 `$`
-- Alpha / 上线时间，统一转为 UTC+8
+- Alpha / 上线 / 空投时间，优先 Alpha123 小时级时间，统一写为 UTC+8
 - 一句话定位
 
 示例：
@@ -465,9 +466,10 @@ CEX 相关信息必须避免被误读为官方确认。
 
 ### 发现与上线信息
 
-1. Binance Alpha public API / Binance Alpha 页面
-2. Alpha123
-3. 官方 X / 官网公告
+1. **Alpha123**：优先用于小时级 Alpha / 上线 / 空投时间；其界面/API 时间按 UTC+8 处理，除非来源明确标注其它时区。
+2. Binance Alpha public API / Binance Alpha 页面：用于项目、日期、活动入口与最终展示交叉验证。
+3. 官方 X / 官网公告：优先确认项目身份与上线日期；如果只给日期、不含小时，不覆盖 Alpha123 小时级时间。
+4. 可信第三方链上监控：只能作为补充，必须标注“第三方监控”。
 
 ### 合约与供应
 
@@ -532,7 +534,7 @@ API 获取入口：
 - [ ] 标题包含 `#Alpha新币分析`
 - [ ] 项目概况足够短
 - [ ] `$SYMBOL` 格式正确
-- [ ] 时间已转为 UTC+8
+- [ ] 上线 / 空投时间优先 Alpha123；Alpha123 时间按 UTC+8 写入，未重复按 UTC 转换
 - [ ] 合约信息在基本面前面
 - [ ] BSC CA 优先
 - [ ] 合约只放 CA + explorer

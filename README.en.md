@@ -26,7 +26,8 @@ howe-bn-alpha-research-skill/
 ├── references/
 │   ├── bn-alpha-monitor-tool-notes.md
 │   ├── data-source-priority.md
-│   └── report-format.md
+│   ├── report-format.md
+│   └── slx-solstice-ca-verification-2026-05-25.md
 ├── templates/
 │   ├── alpha-report-template.md
 │   ├── alpha-report-template.en.md
@@ -125,7 +126,7 @@ X: https://x.com/...
 Important rules:
 
 - `合约地址与链上信息` must come before `基本面与叙事`.
-- `项目概况` should stay short: project, `$SYMBOL`, UTC+8 launch time, and one-line positioning only.
+- `项目概况` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only.
 - The public report should not show explicit trading bands or fair-value ranges by default.
 
 ---
@@ -200,6 +201,12 @@ Avoid:
 
 ---
 
+## Launch-Time Source Priority
+
+For hour-level Alpha / listing / airdrop time, prefer Alpha123 when available. Treat Alpha123 UI/API times as UTC+8 unless the source explicitly states otherwise. Binance Alpha official pages and official X should be used to cross-check project identity and date; a date-only official X post should not overwrite Alpha123's hour-level time. Credible third-party chain monitors can be referenced only as supplemental third-party monitoring.
+
+---
+
 ## Security
 
 Environment variables may include:
@@ -236,7 +243,7 @@ Rules:
 - [ ] `#Alpha新币分析` included
 - [ ] Project overview is concise
 - [ ] `$SYMBOL` format is correct
-- [ ] Time converted to UTC+8
+- [ ] Launch/airdrop time uses Alpha123 first when available and is written as UTC+8 without double conversion
 - [ ] Contract section appears before fundamentals
 - [ ] BSC CA shown first when available
 - [ ] Founder LinkedIn links are attached directly to names
