@@ -33,7 +33,7 @@
 
 ```text
 - Daniel Marin：Co-founder / CEO
-  LinkedIn：https://www.linkedin.com/in/danielmarin
+  LinkedIn：单独一行链接（不要这样写）
 ```
 
 ## CEX 钱包标签格式

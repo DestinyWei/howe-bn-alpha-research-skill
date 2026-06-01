@@ -7,10 +7,10 @@ The default repository README is intentionally kept in Chinese. This English doc
 ## Author and Sources
 
 - Author / Curator: Howe
-- X: https://x.com/0xcryptoHowe
-- Telegram Channel: https://t.me/cryptohowe_treasure
-- Telegram Group: https://t.me/cyrptohowe_discussion
-- Source thread: https://x.com/0xcryptoHowe/status/1982980551285121407
+- [X / 0xcryptoHowe](https://x.com/0xcryptoHowe)
+- [Telegram Channel](https://t.me/cryptohowe_treasure)
+- [Telegram Group](https://t.me/cyrptohowe_discussion)
+- [Source thread](https://x.com/0xcryptoHowe/status/1982980551285121407)
 
 This skill distills Howe's X thread and Howe's Telegram Alpha token research content into a structured Pre-TGE research workflow for BN Alpha tokens.
 
@@ -31,8 +31,8 @@ howe-bn-alpha-research-skill/
 ├── templates/
 │   ├── alpha-report-template.md
 │   ├── alpha-report-template.en.md
-│   ├── private-note-template.md
-│   └── private-note-template.en.md
+│   ├── decision-reminder-template.md
+│   └── decision-reminder-template.en.md
 ├── examples/
 │   ├── nexus-nex.md
 │   └── nexus-nex.en.md
@@ -57,8 +57,8 @@ It covers:
 - Pre-open pool monitoring
 - AMM buy-depth estimation
 - CEX wallet-label observations
-- Key risks and pre-open watchlist
-- A separate private decision note
+- Key risks
+- Decision-assist and pre-open reminder checklist
 
 This workflow is for **Pre-TGE / pre-listing research**, not post-launch intraday trading monitoring.
 
@@ -66,25 +66,14 @@ This workflow is for **Pre-TGE / pre-listing research**, not post-launch intrada
 
 ## Default Output Style
 
-The default output is Chinese and includes two parts:
-
-1. **Public channel draft**
-   - Includes the fixed `#Alpha新币分析` tag
-   - Concise and Telegram-ready
-   - No explicit public trading bands or fair-value ranges by default
-   - Includes a disclaimer
-
-2. **Private decision note**
-   - More direct and opinionated
-   - May include participation bias, valuation ranges, and abandon conditions
-   - Not intended for public channel posting
+The default output is a concise Chinese public channel draft with the fixed `#Alpha新币分析` tag and a disclaimer.
 
 ---
 
 ## Recommended Prompt
 
 ```text
-Use bn-alpha-research to research NEX in our #Alpha新币分析 format. Include pre-open pool monitoring and a private decision note.
+Use bn-alpha-research to research NEX in our #Alpha新币分析 format. Include pre-open pool monitoring and decision-assist key reminders.
 ```
 
 If you already have links or contracts:
@@ -94,9 +83,9 @@ Use bn-alpha-research to research this BN Alpha token:
 Project: Nexus / NEX
 BSC CA: 0x...
 ETH CA: 0x...
-CMC: https://coinmarketcap.com/...
-Official website: https://...
-X: https://x.com/...
+CMC: [CoinMarketCap link]
+Official website: [official website link]
+X: [official X link]
 ```
 
 ---
@@ -115,19 +104,12 @@ X: https://x.com/...
 七、盘前价 / 池子价
 八、估值与开盘观察
 九、主要风险
-十、开盘前观察重点
+十、决策辅助与开盘前重点提醒
 
 免责声明：以上内容仅为个人研究记录，不构成任何投资建议。新币开盘波动较大，请自行判断风险。
-
-【私人决策备注】
-...
 ```
 
-Important rules:
-
-- `合约地址与链上信息` must come before `基本面与叙事`.
-- `项目概况` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only.
-- The public report should not show explicit trading bands or fair-value ranges by default.
+Important rules: `合约地址与链上信息` must come before `基本面与叙事`; `项目概况` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only.
 
 ---
 
@@ -145,14 +127,14 @@ Avoid:
 
 ```text
 - Daniel Marin：Co-founder / CEO
-  LinkedIn：https://www.linkedin.com/in/danielmarin
+  LinkedIn：单独一行链接（不要这样写）
 ```
 
 ---
 
 ## Funding Source Links
 
-Funding, incubation, public-sale, no-VC-allocation, valuation/FDV, and investor claims must include concrete source links in the report. Avoid vague labels like “RootData shows” without a URL.
+Funding, incubation, public-sale, no-VC-allocation, valuation/FDV, and investor claims must include concrete source links in the report. Avoid vague labels like “RootData shows” without a URL. Embed links in readable source names such as `[RootData project page](url)` / `[official tokenomics](url)` instead of pasting a series of naked URLs.
 
 ---
 
@@ -207,6 +189,24 @@ Avoid:
 
 ---
 
+## Decision-Assist and Key Reminder Format
+
+The public version may keep a `决策辅助与开盘前重点提醒` section, but it should only list key risks and information to re-check. Do not include concrete trading strategies, buy/sell prices, position sizing, or strong trading instructions.
+
+Example:
+
+```text
+十、决策辅助与开盘前重点提醒
+- Tokenomics: re-check initial circulation, unlock schedule, and airdrop claim timing to assess possible opening sell pressure.
+- Contract and on-chain: verify the final CA against Binance Alpha / official channels to avoid same-symbol or provisional-pool mistakes.
+- Pre-open / pool: check whether MEXC pre-market volume is meaningful, DEX liquidity is sufficient, and the main pool matches the depth-estimation pool.
+- Funding and cost: verify funding sources and valuation / FDV methodology; do not treat equity valuation as token FDV without evidence.
+- CEX and labels: wallet-label hits are on-chain observations only, not official deposit or listing confirmation.
+- Pre-open re-check: final Tokenomics, CA, pool liquidity, pre-market price, and official announcements.
+```
+
+---
+
 ## Launch-Time Source Priority
 
 For hour-level Alpha / listing / airdrop time, prefer Alpha123 when available. Treat Alpha123 UI/API times as UTC+8 unless the source explicitly states otherwise. Binance Alpha official pages and official X should be used to cross-check project identity and date; a date-only official X post should not overwrite Alpha123's hour-level time. Credible third-party chain monitors can be referenced only as supplemental third-party monitoring.
@@ -226,7 +226,7 @@ BN_ALPHA_MONITOR_DATA_DIR=./data/monitor_snapshots
 
 Where to get the API keys:
 
-- RootData API: apply for / enable OpenAPI from the RootData website. Start from the API docs: `https://www.rootdata.com/ApiDoc` or `https://cn.rootdata.com/ApiDoc`. It is used for project, team, funding, and investor data.
+- RootData API: apply for / enable OpenAPI from the RootData website. Start from the [RootData API docs](https://www.rootdata.com/ApiDoc) or [RootData CN API docs](https://cn.rootdata.com/ApiDoc). It is used for project, team, funding, and investor data.
 - Etherscan API: register / log in to Etherscan and create a key on the API Keys page: `https://etherscan.io/myapikey`; docs: `https://docs.etherscan.io/`. Etherscan API V2 can query ETH / BSC and other chains via `chainid`; this workflow defaults to `ETHERSCAN_API_KEY`, with `BSCSCAN_API_KEY` as an optional BNB Chain override.
 
 Quota notes:
@@ -254,13 +254,12 @@ Rules:
 - [ ] BSC CA shown first when available
 - [ ] Founder LinkedIn links are attached directly to names
 - [ ] Tokenomics missing data is explicitly labeled
-- [ ] Funding/incubation/public-sale/no-VC claims include concrete source links
+- [ ] Funding/incubation/public-sale/no-VC claims include concrete source links embedded in readable text
 - [ ] VC cost includes unit cost + FDV when calculable
 - [ ] Pool block uses monitor output where available
 - [ ] Main pool and depth-estimation pool are separated
 - [ ] Buy-depth tiers are shown as separate indented bullets
 - [ ] CEX wallet labels are not described as official confirmations
-- [ ] Public report has no explicit trading bands by default
-- [ ] Private decision note is separated from public report
+- [ ] Decision-assist section only lists key reminders, not concrete trading actions
 - [ ] Disclaimer included
 - [ ] No real API keys committed

@@ -1,6 +1,6 @@
 ---
 name: bn-alpha-research
-description: "Use when researching Binance Alpha / BN Alpha Pre-TGE new tokens for channel-ready #Alpha新币分析 reports, including contract checks, team/funding, tokenomics, VC cost, pre-open pool monitoring, AMM buy-depth estimates, CEX wallet-label observations, and a private decision note."
+description: "Use when researching Binance Alpha / BN Alpha Pre-TGE new tokens for channel-ready #Alpha新币分析 reports, including contract checks, team/funding, tokenomics, VC cost, pre-open pool monitoring, AMM buy-depth estimates, CEX wallet-label observations, and decision-assist key reminders."
 version: 1.0.0
 author: Howe
 license: MIT
@@ -14,14 +14,14 @@ metadata:
 
 ## Overview
 
-This skill distills Howe's BN Alpha research workflow into a reusable agent skill for Binance Alpha / BN Alpha Pre-TGE tokens. It is designed to produce concise Chinese `#Alpha新币分析` drafts for Telegram channels or research notes, plus a separate private decision note.
+This skill distills Howe's BN Alpha research workflow into a reusable agent skill for Binance Alpha / BN Alpha Pre-TGE tokens. It is designed to produce concise Chinese `#Alpha新币分析` drafts for Telegram channels or research notes, plus decision-assist key reminders that only highlight risks and re-check items.
 
 Source attribution:
 
-- Howe X: https://x.com/0xcryptoHowe
-- Telegram Channel: https://t.me/cryptohowe_treasure
-- Telegram Group: https://t.me/cyrptohowe_discussion
-- Source thread: https://x.com/0xcryptoHowe/status/1982980551285121407
+- [Howe X](https://x.com/0xcryptoHowe)
+- [Telegram Channel](https://t.me/cryptohowe_treasure)
+- [Telegram Group](https://t.me/cyrptohowe_discussion)
+- [Source thread](https://x.com/0xcryptoHowe/status/1982980551285121407)
 
 ## When to Use
 
@@ -31,7 +31,7 @@ Use this skill when the user asks to:
 - 生成 `#Alpha新币分析` 频道草稿
 - 分析 Pre-TGE / 上线前项目
 - 接入盘前池子监控、买入深度估算、CEX 钱包标签观察
-- 形成公开版报告 + 私人决策备注
+- 形成公开版报告 + 决策辅助重点提醒
 
 Do not use it for:
 
@@ -45,8 +45,8 @@ Do not use it for:
 - Language: Chinese
 - Public tag: `#Alpha新币分析`
 - Scope: Pre-TGE only
-- Public report: concise, channel-ready, no explicit public valuation/trading bands
-- Private note: direct, can include participation view and explicit ranges if enough data exists
+- Public report: concise, channel-ready, with disclaimer
+- Decision assist: key reminders only; see dedicated section for public-safety limits
 - Disclaimer: always included
 
 ## Required Public Report Structure
@@ -63,12 +63,9 @@ Do not use it for:
 七、盘前价 / 池子价
 八、估值与开盘观察
 九、主要风险
-十、开盘前观察重点
+十、决策辅助与开盘前重点提醒
 
 免责声明：以上内容仅为个人研究记录，不构成任何投资建议。新币开盘波动较大，请自行判断风险。
-
-【私人决策备注】
-...
 ```
 
 Important ordering rule: `合约地址与链上信息` must appear before `基本面与叙事`.
@@ -140,7 +137,7 @@ VC 成本：
 - 限制：...
 ```
 
-If valuation/allocation data is missing, do not force a VC cost. The financing section must include concrete source links for `raised`, `incubated by`, `backed by`, `public sale`, `no VC allocation`, valuation/FDV, and investor claims; do not rely on vague source labels only.
+If valuation/allocation data is missing, do not force a VC cost. The financing section must include concrete source links for `raised`, `incubated by`, `backed by`, `public sale`, `no VC allocation`, valuation/FDV, and investor claims; do not rely on vague source labels only. Put links on readable source names such as `[RootData 项目页](url)` / `[官方 Tokenomics](url)`, not as a naked URL list.
 
 ### 七、盘前价 / 池子价
 
@@ -200,29 +197,27 @@ Short version:
 5. RootData and LinkedIn for team/funding
 6. Local `bn-alpha-monitor`, Dexscreener, GeckoTerminal, Dextools, and explorer APIs for pool/on-chain evidence
 
-## Private Decision Note
+## Decision-Assist Key Reminders
 
-Use a clearly separated private section:
+Use a public-safe reminder section that highlights risks and items to re-check. Do not include concrete trading strategies, buy/sell prices, position-sizing advice, or strong trading instructions.
 
 ```text
-【私人决策备注】
-参与倾向：低 / 中 / 高
-适合策略：不追高 / 小仓博弈 / 等回调 / 只观察
-关键观察：
-- ...
-放弃条件：
-- ...
+十、决策辅助与开盘前重点提醒
+- Tokenomics：重点复核初始流通、解锁节奏、空投领取时间，判断开盘抛压是否可能集中。
+- 合约与链上：复核最终 CA 是否与 Binance Alpha / 官方渠道一致，避免同名项目或临时池子误判。
+- 盘前 / 池子：关注 MEXC 盘前成交量是否有效、DEX 池子流动性是否足够、主池和深度估算池是否一致。
+- 融资与成本：确认融资来源、轮次估值 / FDV 口径是否可靠，避免把 equity valuation 误当 token FDV。
+- CEX 与链上标签：CEX 钱包标签只作为链上观察，不等同官方充值或上线确认。
+- 临开盘复核：最终 Tokenomics、CA、池子流动性、盘前价、官方公告是否有新增变化。
 ```
-
-Explicit trading bands and valuation ranges belong here, not in the public body.
 
 ## Security Rules
 
 - Never commit real API keys, tokens, secrets, `.env`, raw credentials, private keys, or seed phrases
 - Use `.env.example` placeholders only
 - If docs mention API variables, values must be placeholders like `your_etherscan_api_key_here`
-- RootData API keys can be requested / enabled from the RootData API docs: `https://www.rootdata.com/ApiDoc` or `https://cn.rootdata.com/ApiDoc`; RootData provides free quota suitable for normal daily project/team/funding lookups.
-- Etherscan API keys can be created after logging in at `https://etherscan.io/myapikey`; docs: `https://docs.etherscan.io/`. Etherscan API V2 provides free-tier usage that is usually enough for daily BN Alpha contract-transfer and explorer checks; configure it as `ETHERSCAN_API_KEY`, with `BSCSCAN_API_KEY` only as an optional BNB Chain override.
+- RootData API keys can be requested / enabled from the [RootData API docs](https://www.rootdata.com/ApiDoc) or [RootData CN API docs](https://cn.rootdata.com/ApiDoc); RootData provides free quota suitable for normal daily project/team/funding lookups.
+- Etherscan API keys can be created after logging in on the [Etherscan API Keys page](https://etherscan.io/myapikey); docs: [Etherscan API docs](https://docs.etherscan.io/). Etherscan API V2 provides free-tier usage that is usually enough for daily BN Alpha contract-transfer and explorer checks; configure it as `ETHERSCAN_API_KEY`, with `BSCSCAN_API_KEY` only as an optional BNB Chain override.
 - Run a secret scan before committing
 
 ## Common Pitfalls
@@ -246,13 +241,13 @@ Explicit trading bands and valuation ranges belong here, not in the public body.
 - [ ] Team limited to founders/co-founders by default
 - [ ] LinkedIn links directly on names
 - [ ] Tokenomics missing data labeled explicitly
-- [ ] Financing/incubation/public-sale claims include concrete source links
+- [ ] Financing/incubation/public-sale claims include concrete source links embedded in readable text
 - [ ] VC cost includes unit cost + FDV when computable
 - [ ] Pool block uses monitor output where available
 - [ ] Main pool and depth-estimation pool separated
 - [ ] Buy-depth levels are separate indented bullets
 - [ ] CEX wallet labels include non-official-confirmation note
-- [ ] Public body has no explicit trading bands by default
-- [ ] Private decision note separated
+- [ ] Public body has no explicit trading bands, concrete trading strategy, or position-sizing advice
+- [ ] Decision-assist section only lists key reminders and contains no strong trading instructions
 - [ ] Disclaimer included
 - [ ] No `.env` or real API keys committed

@@ -13,9 +13,9 @@
 
 二、合约地址与链上信息
 - BSC CA：0x365de036a1f7dccb621530d517133521debb2013
-  Explorer：https://bscscan.com/token/0x365de036a1f7dccb621530d517133521debb2013
+  Explorer：[BscScan](https://bscscan.com/token/0x365de036a1f7dccb621530d517133521debb2013)
 - ETH CA：0xf57D49646621F563b0B905aFc8336923AC569Ec5
-  Explorer：https://etherscan.io/token/0xf57D49646621F563b0B905aFc8336923AC569Ec5
+  Explorer：[Etherscan](https://etherscan.io/token/0xf57D49646621F563b0B905aFc8336923AC569Ec5)
 
 五、团队背景
 - [Daniel Marin](https://www.linkedin.com/in/danielmarin)：Co-founder / CEO，负责项目整体战略与产品方向。

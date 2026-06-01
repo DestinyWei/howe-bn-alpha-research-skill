@@ -37,9 +37,9 @@ But web/X/news lookup showed the intended project was **Solstice / SLX**, a 2026
 
 ## Official / higher-confidence project facts found
 
-- Official site: `https://solstice.finance/`
-- Official X: `https://x.com/solsticefi`
-- Docs tokenomics: `https://docs.solstice.finance/solstice-for-users/slx/tokenomics`
+- [Official site](https://solstice.finance/)
+- [Official X](https://x.com/solsticefi)
+- [Docs tokenomics](https://docs.solstice.finance/solstice-for-users/slx/tokenomics)
 - RootData project: Solstice, project_id 14462
 - RootData description: DeFi protocol on Solana with USX, YieldVault, and Solstice Staking; product of Deus X Capital.
 - Official Tokenomics:

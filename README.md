@@ -7,10 +7,10 @@ English guide: [README.en.md](README.en.md)
 ## 作者与来源
 
 - 作者 / 整理：Howe
-- X：https://x.com/0xcryptoHowe
-- Telegram Channel：https://t.me/cryptohowe_treasure
-- Telegram Group：https://t.me/cyrptohowe_discussion
-- 灵感来源：https://x.com/0xcryptoHowe/status/1982980551285121407
+- [X / 0xcryptoHowe](https://x.com/0xcryptoHowe)
+- [Telegram Channel](https://t.me/cryptohowe_treasure)
+- [Telegram Group](https://t.me/cyrptohowe_discussion)
+- [灵感来源推文](https://x.com/0xcryptoHowe/status/1982980551285121407)
 
 这个 skill 是蒸馏并结合 Howe 上述推文，以及 Howe 个人 Telegram 频道中所有 Alpha 新币调研内容后，整理形成的一套 BN Alpha 新币 Pre-TGE 调研工作流。
 
@@ -31,8 +31,8 @@ howe-bn-alpha-research-skill/
 ├── templates/
 │   ├── alpha-report-template.md
 │   ├── alpha-report-template.en.md
-│   ├── private-note-template.md
-│   └── private-note-template.en.md
+│   ├── decision-reminder-template.md
+│   └── decision-reminder-template.en.md
 ├── examples/
 │   ├── nexus-nex.md
 │   └── nexus-nex.en.md
@@ -45,7 +45,7 @@ howe-bn-alpha-research-skill/
 - `README.md`：面向仓库读者的中文默认使用说明。
 - `README.en.md`：英文使用说明。
 - `references/`：数据源、报告格式、盘前监控工具接入说明。
-- `templates/`：公开报告和私人备注模板。
+- `templates/`：公开报告和决策辅助重点提醒模板。
 - `examples/`：示例输出。
 - `.env.example`：环境变量占位符；不要提交真实 `.env`。
 
@@ -68,8 +68,7 @@ howe-bn-alpha-research-skill/
 - 买入深度估算
 - CEX 钱包标签命中观察
 - 主要风险
-- 开盘前观察重点
-- 私人决策备注
+- 决策辅助与开盘前重点提醒
 
 默认场景是 **Pre-TGE / 上线前调研**，不是 Post-TGE 盘中交易监控。
 
@@ -77,18 +76,7 @@ howe-bn-alpha-research-skill/
 
 ## 2. 默认输出风格
 
-默认输出为中文，包含两部分：
-
-1. **公开版频道草稿**
-   - 使用 `#Alpha新币分析` 标签
-   - 内容 concise，可直接复制到 Telegram
-   - 不展示明确买卖区间或公开估值区间
-   - 保留免责声明
-
-2. **私人决策备注**
-   - 可以更直接
-   - 可以写参与倾向、价格区间、放弃条件
-   - 不作为公开频道内容
+默认输出为中文公开版频道草稿：使用 `#Alpha新币分析`，内容简洁，可直接复制到 Telegram，并保留免责声明。
 
 ---
 
@@ -99,7 +87,7 @@ howe-bn-alpha-research-skill/
 示例 prompt：
 
 ```text
-用 bn-alpha-research 调研一下 NEX，按我们的 #Alpha新币分析 格式输出，包含盘前池子监控和私人决策备注。
+用 bn-alpha-research 调研一下 NEX，按我们的 #Alpha新币分析 格式输出，包含盘前池子监控和决策辅助重点提醒。
 ```
 
 如果你已经有项目链接或合约，也可以直接提供：
@@ -109,20 +97,14 @@ howe-bn-alpha-research-skill/
 项目：Nexus / NEX
 BSC CA：0x...
 ETH CA：0x...
-CMC：https://coinmarketcap.com/...
-官网：https://...
-X：https://x.com/...
+CMC：[CoinMarketCap 链接]
+官网：[官方网站链接]
+X：[官方 X 链接]
 ```
 
 ---
 
 ## 4. 公共报告格式
-
-默认标题：
-
-```text
-#Alpha新币分析｜项目名 / SYMBOL
-```
 
 默认结构：
 
@@ -138,19 +120,12 @@ X：https://x.com/...
 七、盘前价 / 池子价
 八、估值与开盘观察
 九、主要风险
-十、开盘前观察重点
+十、决策辅助与开盘前重点提醒
 
 免责声明：以上内容仅为个人研究记录，不构成任何投资建议。新币开盘波动较大，请自行判断风险。
-
-【私人决策备注】
-...
 ```
 
-重要顺序要求：
-
-- `合约地址与链上信息` 必须放在 `基本面与叙事` 前面。
-- `项目概况` 只放短信息，不写长篇叙事。
-- 公开版默认不写明确估值区间和交易区间。
+重要顺序要求：`合约地址与链上信息` 必须放在 `基本面与叙事` 前面；`项目概况` 只放短信息，不写长篇叙事。
 
 ---
 
@@ -200,9 +175,9 @@ X：https://x.com/...
 ```text
 二、合约地址与链上信息
 - BSC CA：0x365de036a1f7dccb621530d517133521debb2013
-  Explorer：https://bscscan.com/token/0x365de036a1f7dccb621530d517133521debb2013
+  Explorer：[BscScan](https://bscscan.com/token/0x365de036a1f7dccb621530d517133521debb2013)
 - ETH CA：0xf57D49646621F563b0B905aFc8336923AC569Ec5
-  Explorer：https://etherscan.io/token/0xf57D49646621F563b0B905aFc8336923AC569Ec5
+  Explorer：[Etherscan](https://etherscan.io/token/0xf57D49646621F563b0B905aFc8336923AC569Ec5)
 ```
 
 ---
@@ -266,7 +241,7 @@ LinkedIn 链接必须直接挂在人名上，不单独占一行。
 
 ```text
 - Daniel Marin：Co-founder / CEO
-  LinkedIn：https://www.linkedin.com/in/danielmarin
+  LinkedIn：单独一行链接（不要这样写）
 ```
 
 如果 LinkedIn 无法核验：
@@ -308,6 +283,7 @@ VC 成本计算优先级：
 要求：
 
 - 融资 / 孵化 / public sale / no VC allocation / 估值 FDV 等说法必须附具体来源链接，不只写“RootData 显示”这类模糊标签。
+- 链接要覆盖在文字上，例如 `[RootData 项目页](url)`、`[官方 Tokenomics](url)`，不要直接贴一连串裸链接。
 - 如果能算，必须同时写 unit cost 和对应 FDV。
 - 如果不能算，明确写 `无法计算`。
 - 公开版不展示主观买卖区间。
@@ -363,8 +339,7 @@ PYTHONPATH=src python -m bn_alpha_monitor.cli snapshot-from-listing \
 - 买入深度：第三方链上监控显示（aLiiDeez）
   - 约 $600k 可推至 $400M FDV
   - 约 $1.08M 可推至 $1B FDV
-- CEX 钱包标签命中：Coinbase / Kraken / KuCoin（链上转账观察）
-- 说明：以上仅表示命中已知交易所钱包标签，不等同官方上线/充值确认
+- CEX 钱包标签：如出现交易所钱包标签，按第 6 节的固定口径说明，避免写成官方确认
 - 风险标记：单边池，价格容易被买盘快速推高；买入深度来自第三方链上监控，需二次验证
 ```
 
@@ -406,22 +381,6 @@ PYTHONPATH=src python -m bn_alpha_monitor.cli snapshot-from-listing \
 
 ---
 
-### 十、开盘前观察重点
-
-示例：
-
-```text
-十、开盘前观察重点
-- 官方是否补充完整 Tokenomics
-- BSC / ETH 合约是否与官方渠道一致
-- 主池流动性是否继续增加
-- 买入深度是否继续变厚
-- 是否出现大额撤池或异常转账
-- CEX 是否发布正式充值 / 交易公告
-```
-
----
-
 ## 6. CEX 钱包标签写法
 
 CEX 相关信息必须避免被误读为官方确认。
@@ -441,24 +400,20 @@ CEX 相关信息必须避免被误读为官方确认。
 
 ---
 
-## 7. 私人决策备注格式
+## 7. 决策辅助与重点提醒格式
 
-私人备注可以更直接，不用于公开发布。
+公开版可以保留 `决策辅助与重点提醒`，但只做关键风险和待复核信息提醒，不输出具体交易策略、买卖价格、仓位建议或强交易指令。
 
 示例：
 
 ```text
-【私人决策备注】
-参与倾向：中
-适合策略：小仓观察，不追高
-关键观察：
-- 如果开盘 FDV 快速冲到高位，但流动性没有同步增加，性价比下降
-- 如果官方补充 Tokenomics 且初始流通较低，短线情绪可能更强
-- 如果出现撤池 / 大额转出，需要降低参与优先级
-放弃条件：
-- 合约与官方信息不一致
-- 池子流动性明显下降
-- CEX 充值确认迟迟不出现
+十、决策辅助与开盘前重点提醒
+- Tokenomics：重点复核初始流通、解锁节奏、空投领取时间，判断开盘抛压是否可能集中。
+- 合约与链上：复核最终 CA 是否与 Binance Alpha / 官方渠道一致，避免同名项目或临时池子误判。
+- 盘前 / 池子：关注 MEXC 盘前成交量是否有效、DEX 池子流动性是否足够、主池和深度估算池是否一致。
+- 融资与成本：确认融资来源、轮次估值 / FDV 口径是否可靠，避免把 equity valuation 误当 token FDV。
+- CEX 与链上标签：CEX 钱包标签只作为链上观察，不等同官方充值或上线确认。
+- 临开盘复核：最终 Tokenomics、CA、池子流动性、盘前价、官方公告是否有新增变化。
 ```
 
 ---
@@ -510,8 +465,8 @@ BN_ALPHA_MONITOR_DATA_DIR=./data/monitor_snapshots
 
 API 获取入口：
 
-- RootData API：在 RootData 官网申请 / 开通 OpenAPI，入口可从 RootData API 文档进入：`https://www.rootdata.com/ApiDoc` 或 `https://cn.rootdata.com/ApiDoc`。用于查询项目、团队、融资、投资人等信息。
-- Etherscan API：注册 / 登录 Etherscan 后，在 API Keys 页面创建 key：`https://etherscan.io/myapikey`；API 文档：`https://docs.etherscan.io/`。当前 Etherscan API V2 可通过不同 `chainid` 查询 ETH / BSC 等多链数据，本工具默认用 `ETHERSCAN_API_KEY`，如需单独覆盖 BNB Chain 可再配置 `BSCSCAN_API_KEY`。
+- RootData API：在 RootData 官网申请 / 开通 OpenAPI，入口可从 RootData API 文档进入：[RootData API docs](https://www.rootdata.com/ApiDoc) 或 [RootData CN API docs](https://cn.rootdata.com/ApiDoc)。用于查询项目、团队、融资、投资人等信息。
+- Etherscan API：注册 / 登录 Etherscan 后，在 [API Keys 页面](https://etherscan.io/myapikey)创建 key；参考 [Etherscan API 文档](https://docs.etherscan.io/)。当前 Etherscan API V2 可通过不同 `chainid` 查询 ETH / BSC 等多链数据，本工具默认用 `ETHERSCAN_API_KEY`，如需单独覆盖 BNB Chain 可再配置 `BSCSCAN_API_KEY`。
 
 额度说明：
 
@@ -542,88 +497,23 @@ API 获取入口：
 - [ ] Team 只写 founders / co-founders
 - [ ] LinkedIn 直接挂在人名上
 - [ ] Tokenomics 缺失时明确写未披露
-- [ ] 融资 / 孵化 / public sale / no VC allocation 说法有具体来源链接
+- [ ] 融资 / 孵化 / public sale / no VC allocation 说法有具体来源链接，并覆盖在来源文字上
 - [ ] VC 成本包含 unit cost + FDV；无法计算时明确说明
 - [ ] 盘前 / 池子 block 接入 monitor 工具
 - [ ] 主池和深度估算池分开
 - [ ] 买入深度每个 FDV 单独一行
 - [ ] CEX 钱包标签不写成官方确认
-- [ ] 公开版不写明确买卖区间
-- [ ] 私人决策备注与公开报告分开
+- [ ] 决策辅助只做重点提醒，不写具体操作建议
 - [ ] 有免责声明
 - [ ] 不自动发布到 Telegram
 - [ ] 不写入 Obsidian / LLM Wiki，除非用户另外要求
 
 ---
 
-## 11. 完整输出骨架
+## 11. 模板文件
 
-```text
-#Alpha新币分析｜项目名 / SYMBOL
+完整输出骨架不在 README 里重复展开，直接看模板：
 
-一、项目概况
-- 项目：...
-- Token：$...
-- Alpha 时间：... UTC+8
-- 定位：...
-
-二、合约地址与链上信息
-- BSC CA：...
-  Explorer：...
-- ETH CA：...
-  Explorer：...
-
-三、基本面与叙事
-...
-
-四、Tokenomics 与流通情况
-Tokenomics：
-- 总量：...
-- 初始流通：...
-- Team：...
-- Investors：...
-- Treasury / Ecosystem：...
-
-五、团队背景
-- [Founder Name](LinkedIn URL)：Role，背景与相关经验。
-- [Co-founder Name](LinkedIn URL)：Role，背景与相关经验。
-
-六、融资背景与 VC 成本推算
-融资情况：
-- ...
-
-VC 成本：
-- 可计算性：...
-- 成本价：...
-- 对应 FDV：...
-- 限制：...
-
-七、盘前价 / 池子价
-盘前 / 池子：项目名 / $SYMBOL
-- 主池：...
-- 深度估算池：...
-- 买入深度：...
-  - 约 $x 可推至 $y FDV
-  - 约 $x 可推至 $y FDV
-  - 约 $x 可推至 $y FDV
-- 风险标记：...
-
-八、估值与开盘观察
-...
-
-九、主要风险
-- ...
-
-十、开盘前观察重点
-- ...
-
-免责声明：以上内容仅为个人研究记录，不构成任何投资建议。新币开盘波动较大，请自行判断风险。
-
-【私人决策备注】
-参与倾向：...
-适合策略：...
-关键观察：
-- ...
-放弃条件：
-- ...
-```
+- 中文公开报告：[`templates/alpha-report-template.md`](templates/alpha-report-template.md)
+- 决策辅助重点提醒：[`templates/decision-reminder-template.md`](templates/decision-reminder-template.md)
+- 英文版本：[`README.en.md`](README.en.md)
