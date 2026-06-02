@@ -18,11 +18,11 @@ This skill distills Howe's BN Alpha research workflow into a reusable agent skil
 
 Source attribution:
 
-- [Howe X](https://x.com/0xcryptoHowe)
-- [Telegram Channel](https://t.me/cryptohowe_treasure)
-- [Telegram Group](https://t.me/cyrptohowe_discussion)
-- WeChat: Howe_Wei (please mention `调研Skill` when adding)
-- [Source thread](https://x.com/0xcryptoHowe/status/1982980551285121407)
+- X/Twitter: [@0xcryptoHowe](https://x.com/0xcryptoHowe)
+- Telegram Channel: [cryptohowe_treasure](https://t.me/cryptohowe_treasure)
+- Telegram Group: [cyrptohowe_discussion](https://t.me/cyrptohowe_discussion)
+- WeChat: `Howe_Wei` (please mention `调研Skill` when adding)
+- Source thread: [original post](https://x.com/0xcryptoHowe/status/1982980551285121407)
 
 ## When to Use
 
