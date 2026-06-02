@@ -22,7 +22,7 @@ Source attribution:
 - Telegram Channel: [cryptohowe_treasure](https://t.me/cryptohowe_treasure)
 - Telegram Group: [cyrptohowe_discussion](https://t.me/cyrptohowe_discussion)
 - WeChat: `Howe_Wei` (please mention `调研Skill` when adding)
-- Source thread: [original post](https://x.com/0xcryptoHowe/status/1982980551285121407)
+- Source thread: [Alpha Research Workflow List](https://x.com/0xcryptoHowe/status/1982980551285121407)
 
 ## When to Use
 
