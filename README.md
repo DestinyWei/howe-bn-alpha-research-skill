@@ -10,6 +10,7 @@ English guide: [README.en.md](README.en.md)
 - [X / 0xcryptoHowe](https://x.com/0xcryptoHowe)
 - [Telegram Channel](https://t.me/cryptohowe_treasure)
 - [Telegram Group](https://t.me/cyrptohowe_discussion)
+- 微信：Howe_Wei（添加请备注：调研Skill）
 - [灵感来源推文](https://x.com/0xcryptoHowe/status/1982980551285121407)
 
 这个 skill 是蒸馏并结合 Howe 上述推文，以及 Howe 个人 Telegram 频道中所有 Alpha 新币调研内容后，整理形成的一套 BN Alpha 新币 Pre-TGE 调研工作流。
