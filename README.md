@@ -47,7 +47,7 @@ howe-bn-alpha-research-skill/
 - `README.en.md`：英文使用说明。
 - `references/`：数据源、报告格式、盘前监控工具接入说明。
 - `templates/`：公开报告和决策辅助重点提醒模板。
-- `examples/`：示例输出。
+- `examples/`：完整示例输出，覆盖公开报告的 1-10 节。
 - `.env.example`：环境变量占位符；不要提交真实 `.env`。
 
 ---

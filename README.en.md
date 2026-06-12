@@ -34,7 +34,7 @@ howe-bn-alpha-research-skill/
 │   ├── alpha-report-template.en.md
 │   ├── decision-reminder-template.md
 │   └── decision-reminder-template.en.md
-├── examples/
+├── examples/                          # Full example outputs covering sections 1-10
 │   ├── nexus-nex.md
 │   └── nexus-nex.en.md
 ├── .env.example
