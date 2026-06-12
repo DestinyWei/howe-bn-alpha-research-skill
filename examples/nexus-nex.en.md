@@ -5,8 +5,10 @@
 ```text
 #Alpha新币分析｜Nexus / NEX
 
+> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！
+
 一、项目概况
-- 项目：Nexus
+- 项目：Nexus｜[@NexusLabs](https://x.com/NexusLabs)
 - Token：$NEX
 - Alpha 时间：2026-05-20 22:00 UTC+8
 - 定位：A verifiable computing network focused on AI / zkVM / verifiable computing.

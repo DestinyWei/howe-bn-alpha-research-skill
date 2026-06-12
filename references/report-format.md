@@ -4,6 +4,8 @@
 
 ```text
 #Alpha新币分析｜项目名 / SYMBOL
+
+> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！
 ```
 
 ## 公开报告结构
@@ -20,6 +22,18 @@
 九、主要风险
 十、开盘前观察重点
 ```
+
+## 项目概况格式
+
+```text
+一、项目概况
+- 项目：项目名｜[@handle](https://x.com/handle)
+- Token：$SYMBOL
+- Alpha 时间：YYYY-MM-DD HH:MM UTC+8
+- 定位：一句话定位。
+```
+
+官方 X/Twitter handle 直接追加在项目行末尾，不单独写 `X：` 标签。
 
 ## 团队 LinkedIn 格式
 

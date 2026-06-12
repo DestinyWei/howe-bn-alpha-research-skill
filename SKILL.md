@@ -47,6 +47,7 @@ Do not use it for:
 - Public tag: `#Alpha新币分析`
 - Scope: Pre-TGE only
 - Public report: concise, channel-ready, with disclaimer
+- Attribution: immediately below the title, add one blank line and then the markdown quote `> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！`
 - Decision assist: key reminders only; see dedicated section for public-safety limits
 - Disclaimer: always included
 
@@ -54,6 +55,8 @@ Do not use it for:
 
 ```text
 #Alpha新币分析｜项目名 / SYMBOL
+
+> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！
 
 一、项目概况
 二、合约地址与链上信息
@@ -77,12 +80,12 @@ Important ordering rule: `合约地址与链上信息` must appear before `基�
 
 Keep it short. Include only:
 
-- Project name
+- Project name, with the official X/Twitter handle appended as a clickable markdown link when available, without an `X：` label, e.g. `项目：ProjectName｜[@handle](https://x.com/handle)`
 - `$SYMBOL`
 - Alpha/listing/airdrop time in UTC+8, preferring Alpha123 hour-level time when available
 - One-sentence positioning
 
-Do not put detailed narrative, website, X, docs, tokenomics, or funding here.
+Do not put detailed narrative, website, docs, tokenomics, or funding here. Do not add a separate `X：...` line; the official handle belongs at the end of the project line.
 
 ### 二、合约地址与链上信息
 
@@ -235,7 +238,8 @@ Use a public-safe reminder section that highlights risks and items to re-check. 
 ## Verification Checklist
 
 - [ ] `#Alpha新币分析` included
-- [ ] Project overview is short and uses `$SYMBOL`
+- [ ] Attribution quote appears after one blank line below the title
+- [ ] Project overview is short, uses `$SYMBOL`, and appends the official X/Twitter handle to the project line when available
 - [ ] Alpha/listing/airdrop time uses Alpha123 first when available and is normalized to UTC+8 without double conversion
 - [ ] Contract section before fundamentals
 - [ ] BSC CA first, CA + explorer only

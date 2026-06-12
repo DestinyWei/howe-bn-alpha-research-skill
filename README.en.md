@@ -96,6 +96,8 @@ X: [official X link]
 ```text
 #Alpha新币分析｜Project Name / SYMBOL
 
+> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！
+
 一、项目概况
 二、合约地址与链上信息
 三、基本面与叙事
@@ -110,7 +112,7 @@ X: [official X link]
 免责声明：以上内容仅为个人研究记录，不构成任何投资建议。新币开盘波动较大，请自行判断风险。
 ```
 
-Important rules: `合约地址与链上信息` must come before `基本面与叙事`; `项目概况` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only.
+Important rules: `合约地址与链上信息` must come before `基本面与叙事`; `项目概况` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only. Add the project's official X/Twitter handle at the end of the project line as a clickable markdown link when available, without an `X：` label. The public draft also includes Howe's attribution quote after one blank line below the title.
 
 ---
 
