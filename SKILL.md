@@ -51,6 +51,18 @@ Do not use it for:
 - Decision assist: key reminders only; see dedicated section for public-safety limits
 - Disclaimer: always included
 
+## First-use Optional API Key Guidance
+
+This skill must remain usable without any API keys. If `ROOTDATA_API_KEY` or `ETHERSCAN_API_KEY` is missing, continue with public pages, official sources, CMC, DEX aggregators, and clearly labeled limitations instead of blocking the report.
+
+For users installing the public skill for the first time, proactively explain that three optional keys improve data quality:
+
+1. `ROOTDATA_API_KEY` — improves project profile, team, funding-round, investor, and ecosystem-label lookups. Users can apply for / enable OpenAPI from RootData API docs: `https://www.rootdata.com/ApiDoc` or `https://cn.rootdata.com/ApiDoc`.
+2. `ETHERSCAN_API_KEY` — improves ETH and other Etherscan-supported chain contract-transfer and explorer checks through Etherscan API V2. Users can create a key after logging in at `https://etherscan.io/myapikey`; docs: `https://docs.etherscan.io/`.
+3. `BSCSCAN_API_KEY` — improves BNB Chain / BSC contract-transfer and explorer checks when BSC is the main evidence chain. Users can create it from BscScan's API Keys page.
+
+Never request keys in-chat unless the user explicitly wants help configuring their local environment; tell users to put keys in local `.env` or secure environment variables and never commit real keys.
+
 ## Required Public Report Structure
 
 ```text

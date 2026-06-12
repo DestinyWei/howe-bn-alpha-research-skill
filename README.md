@@ -52,6 +52,48 @@ howe-bn-alpha-research-skill/
 
 ---
 
+## 首次使用：可选 API Key 引导
+
+这个 skill **不强制要求配置 API key**。不配置也可以正常使用：agent 会继续通过公开网页、官方 X / 官网、CMC、DEX 数据源和人工交叉验证来完成调研。
+
+但如果你希望团队 / 融资 / 链上转账等数据更稳定、更准确，建议首次安装后先配置下面三个 key：
+
+1. `ROOTDATA_API_KEY`
+   - 用途：查询项目档案、团队成员、融资轮次、投资人等信息。
+   - 获取：在 RootData 官网申请 / 开通 OpenAPI，可从 [RootData API docs](https://www.rootdata.com/ApiDoc) 或 [RootData CN API docs](https://cn.rootdata.com/ApiDoc) 进入。
+   - 好处：减少网页访问受限或页面结构变化导致的团队 / 融资信息缺失。
+
+2. `ETHERSCAN_API_KEY`
+   - 用途：通过 Etherscan API V2 查询 ETH 及其它支持链的合约与转账数据。
+   - 获取：登录 Etherscan 后在 [API Keys 页面](https://etherscan.io/myapikey)创建 key；参考 [Etherscan API docs](https://docs.etherscan.io/)。
+   - 好处：比 HTML 页面解析更稳定，适合观察 ETH 侧合约、跨链转账、CEX 钱包标签命中等链上证据。
+
+3. `BSCSCAN_API_KEY`
+   - 用途：查询 BNB Chain / BSC 上的合约与转账数据。
+   - 获取：登录 BscScan 后在 API Keys 页面创建 key；也可参考 Etherscan API V2 文档中的多链说明。
+   - 好处：当 BSC 数据是主链证据时，可以作为独立 key 使用，减少对 HTML fallback 的依赖。
+
+本地配置方式：
+
+```bash
+cp .env.example .env
+# 编辑 .env，填入你自己的 key
+```
+
+示例：
+
+```bash
+ROOTDATA_API_KEY=your_rootdata_api_key_here
+ETHERSCAN_API_KEY=your_etherscan_api_key_here
+# Optional BNB Chain override; usually not needed
+BSCSCAN_API_KEY=your_bscscan_api_key_here
+BN_ALPHA_MONITOR_DATA_DIR=./data/monitor_snapshots
+```
+
+安全提醒：`.env` 只保存在本地，**不要提交到 GitHub**。开源仓库只保留 `.env.example` 占位符。
+
+---
+
 ## 1. 用途
 
 `bn-alpha-research` 用于 Binance Alpha / BN Alpha Pre-TGE 新币调研，目标是生成可直接用于 Telegram 频道或研报草稿的中文 `#Alpha新币分析`。

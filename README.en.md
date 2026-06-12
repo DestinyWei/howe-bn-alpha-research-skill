@@ -42,6 +42,46 @@ howe-bn-alpha-research-skill/
 └── LICENSE
 ```
 
+## First-time Setup: Optional API Key Guide
+
+This skill **does not require API keys**. It still works without them: the agent can continue using public web pages, official X / websites, CMC, DEX data sources, and manual cross-checking.
+
+However, for more stable and accurate team, funding, contract-transfer, and on-chain evidence, it is recommended to configure these three keys after first install:
+
+1. `ROOTDATA_API_KEY`
+   - Purpose: project profiles, team members, funding rounds, investors, and ecosystem labels.
+   - How to get it: apply for / enable RootData OpenAPI from [RootData API docs](https://www.rootdata.com/ApiDoc) or [RootData CN API docs](https://cn.rootdata.com/ApiDoc).
+   - Benefit: reduces missing team/funding data caused by blocked web pages or layout changes.
+
+2. `ETHERSCAN_API_KEY`
+   - Purpose: ETH and other Etherscan-supported chain contract and transfer queries through Etherscan API V2.
+   - How to get it: log in to Etherscan and create a key on the [API Keys page](https://etherscan.io/myapikey); see [Etherscan API docs](https://docs.etherscan.io/).
+   - Benefit: more reliable than HTML parsing for ETH-side contracts, cross-chain transfers, and CEX wallet-label observations.
+
+3. `BSCSCAN_API_KEY`
+   - Purpose: BNB Chain / BSC contract and transfer queries.
+   - How to get it: log in to BscScan and create a key on the API Keys page; also see the multi-chain notes in the Etherscan API V2 docs.
+   - Benefit: useful as a dedicated BSC key when BSC data is the main evidence, reducing reliance on HTML fallback.
+
+Local setup:
+
+```bash
+cp .env.example .env
+# Edit .env and fill in your own keys
+```
+
+Example:
+
+```bash
+ROOTDATA_API_KEY=your_rootdata_api_key_here
+ETHERSCAN_API_KEY=your_etherscan_api_key_here
+# Optional BNB Chain override; usually not needed
+BSCSCAN_API_KEY=your_bscscan_api_key_here
+BN_ALPHA_MONITOR_DATA_DIR=./data/monitor_snapshots
+```
+
+Security reminder: keep `.env` local and **never commit it to GitHub**. The public repository should only keep placeholder values in `.env.example`.
+
 ## Purpose
 
 `bn-alpha-research` is used to generate channel-ready research drafts for Binance Alpha / BN Alpha Pre-TGE tokens.
