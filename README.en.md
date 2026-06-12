@@ -10,7 +10,7 @@ The default repository README is intentionally kept in Chinese. This English doc
 - X/Twitter: [@0xcryptoHowe](https://x.com/0xcryptoHowe)
 - Telegram Channel: [cryptohowe_treasure](https://t.me/cryptohowe_treasure)
 - Telegram Group: [cyrptohowe_discussion](https://t.me/cyrptohowe_discussion)
-- WeChat: `Howe_Wei` (please mention `调研Skill` when adding)
+- WeChat: `Howe_Wei` (please mention `Research Skill` when adding)
 - Source thread: [Alpha Research Workflow List](https://x.com/0xcryptoHowe/status/1982980551285121407)
 
 This skill distills Howe's X thread and Howe's Telegram Alpha token research content into a structured Pre-TGE research workflow for BN Alpha tokens.
@@ -67,14 +67,14 @@ This workflow is for **Pre-TGE / pre-listing research**, not post-launch intrada
 
 ## Default Output Style
 
-The default output is a concise Chinese public channel draft with the fixed `#Alpha新币分析` tag and a disclaimer.
+The default output is a concise Chinese public channel draft with the fixed `Alpha New Token Research` tag and a disclaimer.
 
 ---
 
 ## Recommended Prompt
 
 ```text
-Use bn-alpha-research to research NEX in our #Alpha新币分析 format. Include pre-open pool monitoring and decision-assist key reminders.
+Use bn-alpha-research to research NEX in our Alpha New Token Research format. Include pre-open pool monitoring and decision-assist key reminders.
 ```
 
 If you already have links or contracts:
@@ -94,25 +94,25 @@ X: [official X link]
 ## Public Report Structure
 
 ```text
-#Alpha新币分析｜Project Name / SYMBOL
+# Binance Alpha New Token Research | Project Name / SYMBOL
 
-> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！
+> This BN Alpha research skill is created by [@0xcryptoHowe](https://x.com/0xcryptoHowe). Feedback is welcome.
 
-一、项目概况
-二、合约地址与链上信息
-三、基本面与叙事
-四、Tokenomics 与流通情况
-五、团队背景
-六、融资背景与 VC 成本推算
-七、盘前价 / 池子价
-八、估值与开盘观察
-九、主要风险
-十、决策辅助与开盘前重点提醒
+1. Project Overview
+2. Contract Addresses and On-chain Information
+3. Fundamentals and Narrative
+4. Tokenomics and Circulation
+5. Team Background
+6. Financing Background and VC Cost Estimate
+7. Pre-market Price / Pool Price
+8. Valuation and Opening Observation
+9. Main Risks
+10. Decision Support and Pre-open Checklist
 
-免责声明：以上内容仅为个人研究记录，不构成任何投资建议。新币开盘波动较大，请自行判断风险。
+Disclaimer: The content above is only a personal research note and does not constitute investment advice. New-token openings are highly volatile; please assess risks independently.
 ```
 
-Important rules: `合约地址与链上信息` must come before `基本面与叙事`; `项目概况` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only. Add the project's official X/Twitter handle at the end of the project line as a clickable markdown link when available, without an `X：` label. The public draft also includes Howe's attribution quote after one blank line below the title.
+Important rules: `Contract Addresses and On-chain Information` must come before `Fundamentals and Narrative`; `Project Overview` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only. Add the project's official X/Twitter handle at the end of the project line as a clickable markdown link when available, without an `X:` label. The public draft also includes Howe's attribution quote after one blank line below the title.
 
 ---
 
@@ -123,14 +123,14 @@ LinkedIn links should be attached directly to names.
 Correct:
 
 ```text
-- [Daniel Marin](https://www.linkedin.com/in/danielmarin)：Co-founder / CEO，responsible for overall strategy and product direction.
+- [Daniel Marin](https://www.linkedin.com/in/danielmarin): Co-founder / CEO, responsible for overall strategy and product direction.
 ```
 
 Avoid:
 
 ```text
-- Daniel Marin：Co-founder / CEO
-  LinkedIn：单独一行链接（不要这样写）
+- Daniel Marin: Co-founder / CEO
+  LinkedIn: link placed on a separate line; do not write it this way
 ```
 
 ---
@@ -153,14 +153,14 @@ PYTHONPATH=src python -m bn_alpha_monitor.cli snapshot-from-listing   --source b
 Expected report block style:
 
 ```text
-盘前 / 池子：Nexus / $NEX
-- 主池：BSC pancakeswap-infinity-clmm；当前 FDV $19.9M；流动性 $1.5M
-- 深度估算池：BSC uniswap pool
-- 买入深度：按池子流动性估算
-  - 约 $19.22k 可推至 $39.75M FDV
-  - 约 $33.97k 可推至 $59.62M FDV
-  - 约 $57.35k 可推至 $99.37M FDV
-- 风险标记：买入深度为普通 AMM 公式估算，未计入手续费/MEV/动态流动性
+Pre-market / pool: Nexus / $NEX
+- Main pool: BSC PancakeSwap Infinity CLMM; current FDV $19.9M; liquidity $1.5M
+- Depth-estimation pool: BSC Uniswap pool
+- Buy-depth estimate: estimated from pool liquidity
+  - Around $19.22k buy pressure may push FDV to $39.75M
+  - Around $33.97k buy pressure may push FDV to $59.62M
+  - Around $57.35k buy pressure may push FDV to $99.37M
+- Risk flag: buy-depth is estimated with ordinary AMM math and does not include fees, MEV, or dynamic liquidity
 ```
 
 Rules:
@@ -180,26 +180,26 @@ Use wording that cannot be mistaken for official exchange confirmation.
 Recommended:
 
 ```text
-- CEX 钱包标签命中：Coinbase / Kraken / KuCoin（链上转账观察）
-- 说明：以上仅表示命中已知交易所钱包标签，不等同官方上线/充值确认
+- CEX wallet-label hits: Coinbase / Kraken / KuCoin (on-chain transfer observation)
+- Note: exchange-wallet label hits only indicate matches against known wallet labels; they do not equal official listing or deposit confirmation
 ```
 
 Avoid:
 
 ```text
-- CEX 痕迹：Coinbase 有转账痕迹，链上观察，不等同官方确认
+- CEX traces: Coinbase transfer traces observed on-chain; not official confirmation
 ```
 
 ---
 
 ## Decision-Assist and Key Reminder Format
 
-The public version may keep a `决策辅助与开盘前重点提醒` section, but it should only list key risks and information to re-check. Do not include concrete trading strategies, buy/sell prices, position sizing, or strong trading instructions.
+The public version may keep a `Decision Support and Pre-open Checklist` section, but it should only list key risks and information to re-check. Do not include concrete trading strategies, buy/sell prices, position sizing, or strong trading instructions.
 
 Example:
 
 ```text
-十、决策辅助与开盘前重点提醒
+10. Decision Support and Pre-open Checklist
 - Tokenomics: re-check initial circulation, unlock schedule, and airdrop claim timing to assess possible opening sell pressure.
 - Contract and on-chain: verify the final CA against Binance Alpha / official channels to avoid same-symbol or provisional-pool mistakes.
 - Pre-open / pool: check whether MEXC pre-market volume is meaningful, DEX liquidity is sufficient, and the main pool matches the depth-estimation pool.
@@ -249,7 +249,7 @@ Rules:
 
 ## Final Checklist
 
-- [ ] `#Alpha新币分析` included
+- [ ] `Alpha New Token Research` tag included
 - [ ] Project overview is concise
 - [ ] `$SYMBOL` format is correct
 - [ ] Launch/airdrop time uses Alpha123 first when available and is written as UTC+8 without double conversion
