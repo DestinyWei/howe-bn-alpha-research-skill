@@ -47,7 +47,9 @@ Do not use it for:
 - Public tag: `#Alpha新币分析`
 - Scope: Pre-TGE only
 - Public report: concise, channel-ready, with disclaimer
-- Attribution: immediately below the title, add one blank line and then the markdown quote `> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！`
+- Attribution: immediately below the title, add the markdown quote `> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！` and ensure one visible blank line before `【01｜一分钟速览】`. Telegram may collapse raw blank lines after quote blocks, so use two raw newline gaps if needed.
+- Front matter: add `【01｜一分钟速览】`, `【02｜关键数据卡】`, and `【03｜完整调研内容】` before the original long-form body
+- Public visual summary: optional and off by default; generate only when explicitly requested
 - Decision assist: key reminders only; see dedicated section for public-safety limits
 - Disclaimer: always included
 
@@ -70,6 +72,25 @@ Never request keys in-chat unless the user explicitly wants help configuring the
 
 > 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！
 
+
+【01｜一分钟速览】
+说明：以下为 AI 基于公开资料生成的研究摘要，不代表作者本人建议，也不构成投资建议。
+一句话结论：...
+核心看点：...
+最大风险：...
+数据完整度：高 / 中 / 低
+开盘前最该看：...
+
+【02｜关键数据卡】
+基础信息：...
+供应与流通：...
+融资与成本：...
+价格参考：...
+公开观察：...
+风险标签：...
+
+【03｜完整调研内容】
+
 一、项目概况
 二、合约地址与链上信息
 三、基本面与叙事
@@ -79,12 +100,43 @@ Never request keys in-chat unless the user explicitly wants help configuring the
 七、盘前价 / 池子价
 八、估值与开盘观察
 九、主要风险
-十、决策辅助与开盘前重点提醒
+十、开盘前观察重点
 
 免责声明：以上内容仅为个人研究记录，不构成任何投资建议。新币开盘波动较大，请自行判断风险。
 ```
 
-Important ordering rule: `合约地址与链上信息` must appear before `基本面与叙事`.
+Important ordering rule: `合约地址与链上信息` must appear before `基本面与叙事`. Keep the original full body after `【03｜完整调研内容】`; the summary and data card are additions, not replacements.
+
+## Front Matter Blocks
+
+### 【01｜一分钟速览】
+
+Place this immediately after the attribution quote. It must include the AI-generated-summary disclosure line and use compact label rows instead of an all-bullet list. Keep it public-safe: no buy/sell ranges, position sizing, or wording that sounds like author advice.
+
+### 【02｜关键数据卡】
+
+This is a structured extraction from the body report. Every field must be traceable to the same evidence set as the body. Use shortened CA in this text card only, e.g. `BSC｜0x1234...abcd`; full CA remains in section 二.
+
+Recommended groups: 基础信息、供应与流通、融资与成本、价格参考、公开观察、风险标签.
+
+### 【03｜完整调研内容】
+
+Insert this separator after the data card and before `一、项目概况`. Do not add helper subtitles under `【01】/【02】/【03】`.
+
+## Optional Public Visual Summary
+
+Default: off. Generate an image only when the user explicitly asks for a public visual summary, 总结图, 配图, 数据表格, or 图表.
+
+Default path: deterministic HTML/CSS rendering to a 16:9 PNG via a headless browser when available. Do not require another infographic skill or model-native image generation for data-heavy charts.
+
+Public visual rules:
+
+- Build from `【01｜一分钟速览】` and `【02｜关键数据卡】`, not from private decision notes.
+- Do not include private trading bands, buy/sell ranges, position sizing, or strong trading instructions.
+- Do not display CA / contract addresses in public summary images unless the user explicitly requests it.
+- Do not write meta-placeholder copy in the image such as `不展示合约地址`, `图中不展示 CA`, or `合约地址已隐藏`; simply omit contract-address fields.
+- Include a compact footer such as `非投资建议｜AI 基于公开资料生成｜数据以文字报告为准｜@0xcryptoHowe`.
+- Verify Chinese legibility, no obvious overlap/cropping, and complete footer before returning the image.
 
 ## Section Rules
 
@@ -246,11 +298,17 @@ Use a public-safe reminder section that highlights risks and items to re-check. 
 6. **Overloading the public channel body.** Keep detailed raw evidence in JSON/references, not the Telegram draft.
 7. **Publishing without confirmation.** Return a draft only unless explicitly asked to publish.
 8. **Misreading Alpha123 time zones.** Alpha123 times are treated as UTC+8 in this workflow. Do not convert them again as if they were UTC; if Alpha123 shows `20:00`, report `20:00 UTC+8`.
+9. **Generating public visuals by default.** Public images are optional; generate them only when explicitly requested.
+10. **Writing `不展示合约地址` inside images.** Public visuals should simply omit CA fields rather than explaining that the CA is hidden.
+11. **Letting Telegram eat the blank line after attribution.** Ensure one visible blank line between the attribution quote and `【01｜一分钟速览】`; use an extra raw newline if needed.
 
 ## Verification Checklist
 
 - [ ] `#Alpha新币分析` included
-- [ ] Attribution quote appears after one blank line below the title
+- [ ] Attribution quote appears below the title, with one visible blank line before `【01｜一分钟速览】`
+- [ ] `【01｜一分钟速览】`, `【02｜关键数据卡】`, and `【03｜完整调研内容】` are present
+- [ ] `【01｜一分钟速览】` includes the required AI-generated-summary disclosure and no private trading advice
+- [ ] `【02｜关键数据卡】` only extracts fields supported by the body/evidence set
 - [ ] Project overview is short, uses `$SYMBOL`, and appends the official X/Twitter handle to the project line when available
 - [ ] Alpha/listing/airdrop time uses Alpha123 first when available and is normalized to UTC+8 without double conversion
 - [ ] Contract section before fundamentals
@@ -267,4 +325,6 @@ Use a public-safe reminder section that highlights risks and items to re-check. 
 - [ ] Public body has no explicit trading bands, concrete trading strategy, or position-sizing advice
 - [ ] Decision-assist section only lists key reminders and contains no strong trading instructions
 - [ ] Disclaimer included
+- [ ] Optional public image generated only on request, excludes CA/private decision content, and has no `不展示合约地址` placeholder text
+- [ ] Public visual was QA-checked for Chinese legibility, no overlap/cropping, and complete footer
 - [ ] No `.env` or real API keys committed

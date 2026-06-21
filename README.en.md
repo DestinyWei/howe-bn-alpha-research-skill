@@ -23,6 +23,7 @@ This skill distills Howe's X thread and Howe's Telegram Alpha token research con
 howe-bn-alpha-research-skill/
 ├── README.md                         # Chinese default README
 ├── README.en.md                      # English guide
+├── CHANGELOG.md                      # change log
 ├── SKILL.md                          # Hermes-compatible skill definition
 ├── references/
 │   ├── bn-alpha-monitor-tool-notes.md
@@ -34,13 +35,15 @@ howe-bn-alpha-research-skill/
 │   ├── alpha-report-template.en.md
 │   ├── decision-reminder-template.md
 │   └── decision-reminder-template.en.md
-├── examples/                          # Full example outputs covering sections 1-10
+├── examples/                          # Full example outputs covering front matter + sections 1-10
 │   ├── nexus-nex.md
 │   └── nexus-nex.en.md
 ├── .env.example
 ├── .gitignore
 └── LICENSE
 ```
+
+- `CHANGELOG.md`: change log for output structure, visual-output rules, and documentation updates.
 
 ## First-time Setup: Optional API Key Guide
 
@@ -107,7 +110,13 @@ This workflow is for **Pre-TGE / pre-listing research**, not post-launch intrada
 
 ## Default Output Style
 
-The default output is a concise Chinese public channel draft with the fixed `Alpha New Token Research` tag and a disclaimer.
+The default output is a Chinese public channel draft using `#Alpha新币分析`, with concise Telegram-ready prose and a disclaimer. It includes Howe's attribution quote below the title and must leave one visibly rendered blank line before `【01｜一分钟速览】`; Telegram may collapse a single raw blank line after quote blocks, so add an extra raw newline if needed.
+
+The current public draft structure adds three front-matter blocks before the full body:
+
+- `【01｜一分钟速览】`: AI-generated public-data summary with the required non-advice disclosure.
+- `【02｜关键数据卡】`: structured data card extracted from the body/evidence set.
+- `【03｜完整调研内容】`: separator before the original long-form report sections.
 
 ---
 
@@ -134,25 +143,60 @@ X: [official X link]
 ## Public Report Structure
 
 ```text
-# Binance Alpha New Token Research | Project Name / SYMBOL
+#Alpha新币分析｜Project Name / SYMBOL
 
-> This BN Alpha research skill is created by [@0xcryptoHowe](https://x.com/0xcryptoHowe). Feedback is welcome.
+> 本 BN 新币调研 Skill 由 [@0xcryptoHowe](https://x.com/0xcryptoHowe) 制作，欢迎关注反馈！
 
-1. Project Overview
-2. Contract Addresses and On-chain Information
-3. Fundamentals and Narrative
-4. Tokenomics and Circulation
-5. Team Background
-6. Financing Background and VC Cost Estimate
-7. Pre-market Price / Pool Price
-8. Valuation and Opening Observation
-9. Main Risks
-10. Decision Support and Pre-open Checklist
 
-Disclaimer: The content above is only a personal research note and does not constitute investment advice. New-token openings are highly volatile; please assess risks independently.
+【01｜一分钟速览】
+说明：以下为 AI 基于公开资料生成的研究摘要，不代表作者本人建议，也不构成投资建议。
+一句话结论：...
+核心看点：...
+最大风险：...
+数据完整度：High / Medium / Low
+开盘前最该看：...
+
+【02｜关键数据卡】
+基础信息：...
+供应与流通：...
+融资与成本：...
+价格参考：...
+公开观察：...
+风险标签：...
+
+【03｜完整调研内容】
+
+一、项目概况
+二、合约地址与链上信息
+三、基本面与叙事
+四、Tokenomics 与流通情况
+五、团队背景
+六、融资背景与 VC 成本推算
+七、盘前价 / 池子价
+八、估值与开盘观察
+九、主要风险
+十、开盘前观察重点
+
+免责声明：以上内容仅为个人研究记录，不构成任何投资建议。新币开盘波动较大，请自行判断风险。
 ```
 
-Important rules: `Contract Addresses and On-chain Information` must come before `Fundamentals and Narrative`; `Project Overview` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only. Add the project's official X/Twitter handle at the end of the project line as a clickable markdown link when available, without an `X:` label. The public draft also includes Howe's attribution quote after one blank line below the title.
+Important rules: `合约地址与链上信息` must come before `基本面与叙事`; `项目概况` should stay short: project, `$SYMBOL`, Alpha123-prioritized UTC+8 launch/airdrop time, and one-line positioning only. Add the project's official X/Twitter handle at the end of the project line as a clickable markdown link when available, without an `X:` label. Keep `【01】/【02】/【03】` headings clean, with no helper subtitles.
+
+
+---
+
+## Optional Public Visual Summary / Data Table
+
+Images are off by default. Generate a public summary image, data table, or chart only when explicitly requested. The recommended path is deterministic HTML/CSS rendered to a 16:9 PNG via a headless browser.
+
+Visual rules:
+
+- Build the visual from `【01｜一分钟速览】` and `【02｜关键数据卡】`, not from private decision notes.
+- Do not show CA / contract addresses unless explicitly requested.
+- Do not write placeholder text like `不展示合约地址`, `图中不展示 CA`, or `合约地址已隐藏`; simply omit contract-address fields.
+- Do not include private decision notes, buy/sell bands, position sizing, or strong trading instructions.
+- Include a short footer such as `非投资建议｜AI 基于公开资料生成｜数据以文字报告为准｜@0xcryptoHowe`.
+- QA the image for Chinese legibility, no overlap/cropping, and complete footer before returning it.
 
 ---
 
