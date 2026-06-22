@@ -185,18 +185,36 @@ Important rules: `合约地址与链上信息` must come before `基本面与叙
 
 ---
 
-## Optional Public Visual Summary / Data Table
+## Optional Public Visual Summary / Data Table / Tokenomics Chart
 
-Images are off by default. Generate a public summary image, data table, or chart only when explicitly requested. The recommended path is deterministic HTML/CSS rendered to a 16:9 PNG via a headless browser.
+Images are off by default. Generate a public summary image, data table, tokenomics chart, or other chart only when explicitly requested.
+
+**Unified generation path: deterministic HTML/CSS rendered by a headless browser to a 16:9 PNG.** Do not use PIL/manual drawing, model-native image generation, or prompt-only output as the default implementation. If no browser renderer is available, return the HTML file or a prompt-only brief as a fallback.
+
+Supported modes:
+
+1. `summary_dashboard`
+   - Default recommendation for channel images / landscape public summaries.
+   - Shows positioning, open time, core data, risk tags, and watchpoints.
+
+2. `data_table`
+   - Structured key-data table image.
+   - Fields come from `【02｜关键数据卡】` and the same evidence set: supply, circulation, funding, VC cost, pre-market price, pool price, and risk tags.
+
+3. `tokenomics_chart`
+   - Tokenomics allocation chart.
+   - Render a donut / bar / stacked allocation only when public allocation data is sufficiently complete. If allocation data is incomplete, render a disclosure-status chart instead and label missing fields as `待披露` / `待核验` / `无法计算`; never invent Team / Investors / Ecosystem percentages.
 
 Visual rules:
 
+- Keep all three modes visually consistent with `summary_dashboard`: dark dashboard background, card grid, section numbers, colored accents, readable Chinese typography, and footer disclaimer.
+- Keep the header clean: title + concise subtitle only. Do not add decorative top-right badge / pill boxes such as `HTML/CSS 16:9`, `Public Visual`, `Data Table`, `Tokenomics`, or `No Fake Ratio`.
 - Build the visual from `【01｜一分钟速览】` and `【02｜关键数据卡】`, not from private decision notes.
 - Do not show CA / contract addresses unless explicitly requested.
 - Do not write placeholder text like `不展示合约地址`, `图中不展示 CA`, or `合约地址已隐藏`; simply omit contract-address fields.
 - Do not include private decision notes, buy/sell bands, position sizing, or strong trading instructions.
 - Include a short footer such as `非投资建议｜AI 基于公开资料生成｜数据以文字报告为准｜@0xcryptoHowe`.
-- QA the image for Chinese legibility, no overlap/cropping, and complete footer before returning it.
+- QA the image for Chinese legibility, no overlap/cropping, and complete footer before returning it; pay special attention to silent bottom-line cropping caused by `overflow:hidden`.
 
 ---
 

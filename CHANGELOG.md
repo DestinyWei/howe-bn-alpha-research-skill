@@ -1,3 +1,13 @@
+# Changelog
+
+## [Unreleased]
+
+### Changed
+
+- 强化公共生图规则：`summary_dashboard`、`data_table`、`tokenomics_chart` 均默认使用 HTML/CSS → headless browser → 16:9 PNG，不再把 PIL / 手动画图作为默认路径。
+- 明确公共图头部不要添加右上角装饰性 badge / pill 框；保留标题 + 简短副标题即可。
+- 明确 `tokenomics_chart` 在分配数据不完整时必须生成披露状态图，不能伪造 Team / Investors / Ecosystem 占比。
+
 # 修改记录 / Changelog
 
 ## 2026-06-21

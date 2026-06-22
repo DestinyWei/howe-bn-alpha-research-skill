@@ -125,18 +125,27 @@ Insert this separator after the data card and before `一、项目概况`. Do no
 
 ## Optional Public Visual Summary
 
-Default: off. Generate an image only when the user explicitly asks for a public visual summary, 总结图, 配图, 数据表格, or 图表.
+Default: off. Generate an image only when the user explicitly asks for a public visual summary, 总结图, 配图, 数据表格, Tokenomics 图, or 图表.
 
-Default path: deterministic HTML/CSS rendering to a 16:9 PNG via a headless browser when available. Do not require another infographic skill or model-native image generation for data-heavy charts.
+Default path: deterministic HTML/CSS rendering to a 16:9 PNG via a headless browser when available. Do not require another infographic skill or model-native image generation for data-heavy charts. Do not use PIL/manual drawing as the default path.
+
+Supported public visual modes:
+
+- `summary_dashboard` — default recommendation for a channel-ready landscape public summary.
+- `data_table` — structured key-field table image built from `【02｜关键数据卡】` and the same evidence set.
+- `tokenomics_chart` — tokenomics allocation chart when public allocation data is complete; if allocation is incomplete, render a disclosure-status chart instead of inventing percentages.
 
 Public visual rules:
 
 - Build from `【01｜一分钟速览】` and `【02｜关键数据卡】`, not from private decision notes.
+- Keep all modes visually consistent with `summary_dashboard`: dark dashboard/card-grid style, 16:9 landscape, visible section numbers, colored accents, readable Chinese, and footer disclaimer.
+- Keep the image header clean: title + concise subtitle only. Do not add decorative top-right badge / pill boxes such as `HTML/CSS 16:9`, `Public Visual`, `Data Table`, `Tokenomics`, or `No Fake Ratio`.
 - Do not include private trading bands, buy/sell ranges, position sizing, or strong trading instructions.
 - Do not display CA / contract addresses in public summary images unless the user explicitly requests it.
 - Do not write meta-placeholder copy in the image such as `不展示合约地址`, `图中不展示 CA`, or `合约地址已隐藏`; simply omit contract-address fields.
+- For `tokenomics_chart`, do not force a pie/donut if data is incomplete. Label missing fields as `待披露`, `待核验`, or `无法计算`.
 - Include a compact footer such as `非投资建议｜AI 基于公开资料生成｜数据以文字报告为准｜@0xcryptoHowe`.
-- Verify Chinese legibility, no obvious overlap/cropping, and complete footer before returning the image.
+- Verify Chinese legibility, no obvious overlap/cropping, and complete footer before returning the image; especially check for silent bottom-line cropping from `overflow:hidden`.
 
 ## Section Rules
 
