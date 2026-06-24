@@ -4,6 +4,8 @@
 
 ### Changed
 
+- 补充 Tokenomics 二次核验 comments：官方 whitepaper / litepaper / PDF 必须下载抽取；PDF 图表/截图中的 allocation、unlock、vesting、circulating supply 需要 OCR / vision 复核后，才能判定 Tokenomics 缺失。
+- 强化报告口径 comments：区分 Allocation、Available Supply、Circulating Supply、TGE unlock，避免把已解锁但未必立即流通的 future-activation / governance 池子直接当成开盘卖压。
 - 强化公共生图规则：`summary_dashboard`、`data_table`、`tokenomics_chart` 均默认使用 HTML/CSS → headless browser → 16:9 PNG，不再把 PIL / 手动画图作为默认路径。
 - 明确公共图头部不要添加右上角装饰性 badge / pill 框；保留标题 + 简短副标题即可。
 - 明确 `tokenomics_chart` 在分配数据不完整时必须生成披露状态图，不能伪造 Team / Investors / Ecosystem 占比。

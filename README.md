@@ -320,10 +320,17 @@ Tokenomics：
 
 规则：
 
-- 缺失就明确写 `暂未披露`
+- 缺失就明确写 `暂未披露`，但不要只因为网页文本抽取不到就下结论
 - 不猜测比例
 - 最多放 3 个关键来源链接
 - 如果 CMC 与官方数据不一致，以官方资料优先，并说明差异
+
+Tokenomics 二次检查：
+
+- 如果官网 / docs / CMC 链到 whitepaper、litepaper 或 PDF，必须下载后做文本抽取。优先用 PyMuPDF / `fitz`，搜索 `allocation`、`genesis`、`tokenomics`、`unlock`、`vesting`、`circulating supply` 等关键词。
+- 如果分配、解锁或流通信息在 PDF 的图表 / 截图里，必须对对应页面做 OCR 或 vision 检查后，才能写 `官方暂未披露完整 Tokenomics`。
+- 如果 Google / CMC / 社区搜索结果出现类似 `<SYMBOL> allocation at genesis`、`Figure ... allocation`、`whitepaper ... tokenomics` 的 snippet，要跟进原始 PDF / 页面核验，不要只依赖网页 token 页面。
+- 报告里要区分 `Allocation / Available / Circulating / TGE unlock`：已解锁但由治理或后续活动决定分配的池子，不一定等同于开盘可直接卖压。
 
 ---
 

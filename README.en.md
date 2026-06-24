@@ -218,6 +218,17 @@ Visual rules:
 
 ---
 
+## Tokenomics Source-Check Comments
+
+- Do not mark `complete Tokenomics not disclosed` just because the token page or webpage text extraction lacks an allocation table.
+- If the official website, docs, CMC page, or community search snippets point to a whitepaper, litepaper, or PDF, download it and extract text before labeling Tokenomics as missing.
+- Search PDF text for `allocation`, `genesis`, `tokenomics`, `unlock`, `vesting`, and `circulating supply`; inspect nearby figure/table text.
+- If allocation or unlock data is embedded in charts/screenshots, run OCR or vision on the relevant PDF page/image.
+- Follow snippets such as `<SYMBOL> allocation at genesis`, `Figure ... allocation`, or `whitepaper ... tokenomics` to the original source and verify directly.
+- Separate `Allocation`, `Available Supply`, `Circulating Supply`, and `TGE unlock`; unlocked governance/future-activation pools do not automatically equal immediate opening sell pressure.
+
+---
+
 ## Team and LinkedIn Format
 
 LinkedIn links should be attached directly to names.

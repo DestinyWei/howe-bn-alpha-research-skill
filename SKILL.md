@@ -173,7 +173,7 @@ Briefly cover sector, problem statement, product maturity, traction, narrative f
 
 ### 四、Tokenomics 与流通情况
 
-Use compact blocks. Missing data must be explicit, e.g. `官方暂未披露完整 Tokenomics`.
+Use compact blocks. Missing data must be explicit, e.g. `官方暂未披露完整 Tokenomics`, but do not conclude that tokenomics is missing from webpage extraction alone.
 
 ```text
 Tokenomics：
@@ -183,6 +183,14 @@ Tokenomics：
 - Investors：...
 - Treasury / Ecosystem：...
 ```
+
+Tokenomics source-check comments:
+
+- If the official site/docs/CMC link to a whitepaper, litepaper, or PDF, download it and text-extract it before labeling Tokenomics as missing. Prefer PyMuPDF / `fitz` when available.
+- Search extracted text for `allocation`, `genesis`, `tokenomics`, `unlock`, `vesting`, `circulating supply`, and inspect nearby figure/table text.
+- If allocation/unlock/circulation data is embedded in PDF charts or screenshots, use OCR or vision on the relevant page/image.
+- Follow snippets like `<SYMBOL> allocation at genesis`, `Figure ... allocation`, or `whitepaper ... tokenomics` back to the original source and verify directly.
+- Distinguish `Allocation`, `Available Supply`, `Circulating Supply`, and `TGE unlock`; unlocked governance/future-activation pools may not equal immediate opening sell pressure.
 
 ### 五、团队背景
 

@@ -49,6 +49,13 @@
 - `【02｜关键数据卡】` 只能抽取正文和同一证据集已支持的数据；缺失值明确写 `未披露` / `暂未发现` / `无法计算` / `暂无法判断`。
 - `【03｜完整调研内容】` 是前置摘要/数据卡与原有正文的分隔符；不要在 `【01】/【02】/【03】` 标题下添加辅助副标题。
 
+## Tokenomics 证据核验注释
+
+- 不要只因为官网 token 页面或网页文本抽取不到分配表，就写 `官方暂未披露完整 Tokenomics`。
+- 若官网 / docs / CMC 链到 whitepaper、litepaper、PDF，先下载并用 PyMuPDF / `fitz` 等工具做文本抽取，搜索 `allocation`、`genesis`、`tokenomics`、`unlock`、`vesting`、`circulating supply`。
+- 如果关键数据在 PDF 图表 / 截图中，必须对对应页面做 OCR 或 vision 检查。
+- 写报告时区分 `Allocation`、`Available Supply`、`Circulating Supply`、`TGE unlock`；已解锁但需治理/后续活动分配的池子，不等同于开盘直接卖压。
+
 ## 可选公共总结图 / 数据表格 / Tokenomics 图规则
 
 默认不生成图片；只有用户明确要求“总结图 / 配图 / 数据表格 / Tokenomics 图 / 图表”时才生成。
