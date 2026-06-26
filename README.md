@@ -338,6 +338,8 @@ Tokenomics 二次检查：
 
 默认只写 founder / co-founder / CEO / chief scientist 等核心创始层。
 
+如果已经找到项目 / 公司 LinkedIn 页，不要停在公司主页；继续查看 People / employees 列表，并用 `项目名/公司名 + founder/co-founder/CEO` 继续搜索公开资料，尽量挖出与该公司页关联的创始层个人资料。若公司页能看到员工或创始层线索，但个人 LinkedIn 访问受限，可以标注为 `LinkedIn 待完整核验`，不要直接写成团队缺失。
+
 LinkedIn 链接必须直接挂在人名上，不单独占一行。
 
 推荐格式：

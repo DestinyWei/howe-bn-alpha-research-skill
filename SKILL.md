@@ -196,6 +196,8 @@ Tokenomics source-check comments:
 
 Only cover founders / co-founders / CEO-level core people by default.
 
+If a project/company LinkedIn page is found, do not stop at the company page. Continue into the People / employees list and search LinkedIn/public web for `project or company name + founder/co-founder/CEO` to surface founder-level profiles associated with that page. When the company page exposes employee names but individual profiles are access-limited, include founder-level matches as `LinkedIn 待完整核验` instead of treating team data as missing.
+
 If LinkedIn is available, link it directly on the person's name:
 
 ```text
