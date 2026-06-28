@@ -1,6 +1,6 @@
 ---
 name: bn-alpha-research
-description: "Use when researching Binance Alpha / BN Alpha Pre-TGE new tokens for channel-ready #Alpha新币分析 reports, including contract checks, team/funding, tokenomics, VC cost, pre-open pool monitoring, AMM buy-depth estimates, CEX wallet-label observations, and decision-assist key reminders."
+description: "Use when researching Binance Alpha / BN Alpha Pre-TGE new tokens for channel-ready #Alpha新币分析 reports, including contract checks, team/funding, tokenomics, VC cost, MEXC + Aspecta pre-market checks, pre-open pool monitoring, AMM buy-depth estimates, CEX wallet-label observations, and decision-assist key reminders."
 version: 1.0.0
 author: Howe
 license: MIT
@@ -31,7 +31,7 @@ Use this skill when the user asks to:
 - 调研 Binance Alpha / BN Alpha 新币
 - 生成 `#Alpha新币分析` 频道草稿
 - 分析 Pre-TGE / 上线前项目
-- 接入盘前池子监控、买入深度估算、CEX 钱包标签观察
+- 接入 MEXC / Aspecta 盘前价、盘前池子监控、买入深度估算、CEX 钱包标签观察
 - 形成公开版报告 + 决策辅助重点提醒
 
 Do not use it for:
@@ -228,7 +228,16 @@ If valuation/allocation data is missing, do not force a VC cost. The financing s
 
 ### 七、盘前价 / 池子价
 
-Prefer the local monitor tool when available.
+Always check pre-market pricing on both MEXC and Aspecta, then prefer the local monitor tool for DEX pool / buy-depth context when available.
+
+Pre-market checks:
+
+- MEXC: check the pre-market page or direct symbol URL; capture price, volume, and whether the market is effective or only `Closed` / `--` / `TBD`.
+- Aspecta: check `https://trade.aspecta.ai/` for the matching project / token pre-market or BuildKey-style market; capture price plus displayed volume, liquidity, depth, or timestamp if available.
+- Treat Aspecta as an additional pre-market reference alongside MEXC, not a replacement. If MEXC and Aspecta diverge, report both separately and explain likely causes such as thin liquidity, different instrument, time lag, or order-book depth; do not average them.
+- If no matching Aspecta market exists or the page is inaccessible, write `Aspecta 暂未发现有效盘前价格` instead of omitting it.
+
+DEX pool / depth monitor:
 
 ```bash
 cd /home/ubuntu/bn-alpha-monitor
@@ -251,6 +260,8 @@ Example:
 
 ```text
 盘前 / 池子：Nexus / $NEX
+- MEXC：价格 ...｜成交量 ...｜参考价值：高/中/低
+- Aspecta：价格 ...｜成交量 / 深度 ...｜参考价值：高/中/低
 - 主池：BSC pancakeswap-infinity-clmm；当前 FDV $19.9M；流动性 $1.5M
 - 深度估算池：BSC uniswap pool
 - 买入深度：按池子流动性估算
@@ -282,7 +293,8 @@ Short version:
 3. Official website/docs/X for authoritative project and CA claims
 4. CoinMarketCap for supply/contract metadata, cross-checked with official sources
 5. RootData and LinkedIn for team/funding
-6. Local `bn-alpha-monitor`, Dexscreener, GeckoTerminal, Dextools, and explorer APIs for pool/on-chain evidence
+6. MEXC and Aspecta (`https://trade.aspecta.ai/`) for pre-market price references
+7. Local `bn-alpha-monitor`, Dexscreener, GeckoTerminal, Dextools, and explorer APIs for pool/on-chain evidence
 
 ## Decision-Assist Key Reminders
 
@@ -292,7 +304,7 @@ Use a public-safe reminder section that highlights risks and items to re-check. 
 十、决策辅助与开盘前重点提醒
 - Tokenomics：重点复核初始流通、解锁节奏、空投领取时间，判断开盘抛压是否可能集中。
 - 合约与链上：复核最终 CA 是否与 Binance Alpha / 官方渠道一致，避免同名项目或临时池子误判。
-- 盘前 / 池子：关注 MEXC 盘前成交量是否有效、DEX 池子流动性是否足够、主池和深度估算池是否一致。
+- 盘前 / 池子：关注 MEXC / Aspecta 盘前成交量、深度和价格是否有效，DEX 池子流动性是否足够，主池和深度估算池是否一致。
 - 融资与成本：确认融资来源、轮次估值 / FDV 口径是否可靠，避免把 equity valuation 误当 token FDV。
 - CEX 与链上标签：CEX 钱包标签只作为链上观察，不等同官方充值或上线确认。
 - 临开盘复核：最终 Tokenomics、CA、池子流动性、盘前价、官方公告是否有新增变化。
@@ -320,6 +332,7 @@ Use a public-safe reminder section that highlights risks and items to re-check. 
 9. **Generating public visuals by default.** Public images are optional; generate them only when explicitly requested.
 10. **Writing `不展示合约地址` inside images.** Public visuals should simply omit CA fields rather than explaining that the CA is hidden.
 11. **Letting Telegram eat the blank line after attribution.** Ensure one visible blank line between the attribution quote and `【01｜一分钟速览】`; use an extra raw newline if needed.
+12. **Only checking MEXC pre-market.** Always also check Aspecta (`https://trade.aspecta.ai/`) for pre-market / BuildKey-style pricing and report missing/inaccessible states explicitly.
 
 ## Verification Checklist
 
@@ -337,6 +350,8 @@ Use a public-safe reminder section that highlights risks and items to re-check. 
 - [ ] Tokenomics missing data labeled explicitly
 - [ ] Financing/incubation/public-sale claims include concrete source links embedded in readable text
 - [ ] VC cost includes unit cost + FDV when computable
+- [ ] MEXC and Aspecta pre-market checks are both included, or missing/inaccessible states are explicit
+- [ ] If MEXC and Aspecta prices diverge, both are shown separately with confidence based on volume/depth/freshness instead of averaged
 - [ ] Pool block uses monitor output where available
 - [ ] Main pool and depth-estimation pool separated
 - [ ] Buy-depth levels are separate indented bullets

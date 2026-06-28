@@ -98,7 +98,7 @@ It covers:
 - Tokenomics and circulating supply
 - Founder/team background and LinkedIn checks
 - Funding and VC cost estimation
-- Pre-open pool monitoring
+- MEXC / Aspecta pre-market and pre-open pool monitoring
 - AMM buy-depth estimation
 - CEX wallet-label observations
 - Key risks
@@ -254,9 +254,17 @@ Funding, incubation, public-sale, no-VC-allocation, valuation/FDV, and investor 
 
 ---
 
-## Pre-Open Pool Monitoring Format
+## Pre-Market / Pre-Open Pool Monitoring Format
 
-The skill can use the local `bn-alpha-monitor` tool when available.
+The workflow should check pre-market pricing on both MEXC and Aspecta, then use the local `bn-alpha-monitor` tool for DEX pool / buy-depth context when available.
+
+Pre-market checks:
+
+- MEXC: capture price, volume, and whether the page shows an effective market or only `Closed` / `--` / `TBD`.
+- Aspecta: visit `https://trade.aspecta.ai/` and check for the matching project / token pre-market or BuildKey-style market. Capture price plus visible volume, liquidity, depth, or timestamp fields.
+- Aspecta is an additional reference alongside MEXC, not a replacement. If MEXC and Aspecta diverge, report both separately and rank confidence by volume, depth, and freshness instead of averaging prices.
+
+DEX pool / depth monitoring:
 
 ```bash
 cd /home/ubuntu/bn-alpha-monitor
@@ -267,6 +275,8 @@ Expected report block style:
 
 ```text
 Pre-market / pool: Nexus / $NEX
+- MEXC: price ... | volume ... | reference value: High/Medium/Low
+- Aspecta: price ... | volume / depth ... | reference value: High/Medium/Low
 - Main pool: BSC PancakeSwap Infinity CLMM; current FDV $19.9M; liquidity $1.5M
 - Depth-estimation pool: BSC Uniswap pool
 - Buy-depth estimate: estimated from pool liquidity
@@ -315,7 +325,7 @@ Example:
 10. Decision Support and Pre-open Checklist
 - Tokenomics: re-check initial circulation, unlock schedule, and airdrop claim timing to assess possible opening sell pressure.
 - Contract and on-chain: verify the final CA against Binance Alpha / official channels to avoid same-symbol or provisional-pool mistakes.
-- Pre-open / pool: check whether MEXC pre-market volume is meaningful, DEX liquidity is sufficient, and the main pool matches the depth-estimation pool.
+- Pre-open / pool: check whether MEXC / Aspecta pre-market volume, depth, and price are meaningful, DEX liquidity is sufficient, and the main pool matches the depth-estimation pool.
 - Funding and cost: verify funding sources and valuation / FDV methodology; do not treat equity valuation as token FDV without evidence.
 - CEX and labels: wallet-label hits are on-chain observations only, not official deposit or listing confirmation.
 - Pre-open re-check: final Tokenomics, CA, pool liquidity, pre-market price, and official announcements.
@@ -371,7 +381,9 @@ Rules:
 - [ ] Founder LinkedIn links are attached directly to names
 - [ ] Tokenomics missing data is explicitly labeled
 - [ ] Funding/incubation/public-sale/no-VC claims include concrete source links embedded in readable text
-- [ ] VC cost includes unit cost + FDV when calculable
+- [ ] VC cost includes unit cost + FDV when computable
+- [ ] MEXC and Aspecta pre-market checks are both included, or missing/inaccessible states are explicit
+- [ ] If MEXC and Aspecta prices diverge, both are shown separately with confidence based on volume/depth/freshness instead of averaged
 - [ ] Pool block uses monitor output where available
 - [ ] Main pool and depth-estimation pool are separated
 - [ ] Buy-depth tiers are shown as separate indented bullets

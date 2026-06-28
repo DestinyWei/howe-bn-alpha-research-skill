@@ -40,17 +40,26 @@
 - LinkedIn 直接挂在人名上。
 - LinkedIn 无法访问时，明确写核验限制。
 
-## 4. 池子与链上监控
+## 4. 盘前价 / 池子与链上监控
 
-1. 本地 `bn-alpha-monitor`
-2. Dexscreener
-3. GeckoTerminal
-4. Dextools
-5. Etherscan API V2 / BSC via Etherscan V2 chainid
-6. 可信第三方链上监控帖
+1. **MEXC pre-market**
+   - 检查通用盘前页或 direct symbol URL。
+   - 记录价格、成交量和是否为有效市场；如果页面显示 `Closed` / `--` / `TBD`，写成无有效盘前参考。
+2. **Aspecta pre-market / BuildKey trading**：`https://trade.aspecta.ai/`
+   - 查找匹配项目 / token 的盘前或 BuildKey-style 市场。
+   - 记录价格、成交量、流动性、深度、更新时间等 UI 可见字段。
+   - Aspecta 是 MEXC 之外的额外盘前参考，不替代 MEXC。两者价格不一致时分别列出，按成交量、深度和新鲜度判断参考价值，不做简单平均。
+   - 如果没有匹配市场或页面不可访问，明确写 `Aspecta 暂未发现有效盘前价格`。
+3. 本地 `bn-alpha-monitor`
+4. Dexscreener
+5. GeckoTerminal
+6. Dextools
+7. Etherscan API V2 / BSC via Etherscan V2 chainid
+8. 可信第三方链上监控帖
 
 规则：
 
 - 第三方链上监控必须标注来源，且不能覆盖 Alpha123 的小时级时间。
 - CEX 钱包标签只是链上观察，不等同官方上线/充值确认。
 - CLMM/V3/Infinity 不应只用 TVL 估算买入深度。
+- 盘前价至少查 MEXC + Aspecta；任一来源缺失时要显式说明，而不是省略。

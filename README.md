@@ -109,7 +109,7 @@ BN_ALPHA_MONITOR_DATA_DIR=./data/monitor_snapshots
 - Tokenomics 与流通情况
 - 团队背景与 LinkedIn 核验
 - 融资背景与 VC 成本推算
-- 盘前 / 池子监控
+- MEXC / Aspecta 盘前价与池子监控
 - 买入深度估算
 - CEX 钱包标签命中观察
 - 主要风险
@@ -405,7 +405,13 @@ VC 成本计算优先级：
 
 ### 七、盘前价 / 池子价
 
-优先接入本地 `bn-alpha-monitor` 工具输出。
+盘前价格至少同时检查 MEXC 与 Aspecta：
+
+- MEXC：记录价格、成交量、页面是否为有效市场；如果 direct symbol URL 显示 `Closed` / `--` / `TBD`，写成无有效盘前参考。
+- Aspecta：访问 `https://trade.aspecta.ai/`，查找匹配项目 / token 的盘前或 BuildKey-style 市场，记录价格、成交量、流动性、深度、更新时间等 UI 可见字段。
+- Aspecta 是 MEXC 之外的额外参考，不替代 MEXC。两者不一致时分别列出，按成交量、深度和新鲜度判断参考价值，不做简单平均。
+
+DEX 池子与买入深度优先接入本地 `bn-alpha-monitor` 工具输出。
 
 工具路径：
 
@@ -427,6 +433,8 @@ PYTHONPATH=src python -m bn_alpha_monitor.cli snapshot-from-listing \
 
 ```text
 盘前 / 池子：Nexus / $NEX
+- MEXC：价格 ...｜成交量 ...｜参考价值：高/中/低
+- Aspecta：价格 ...｜成交量 / 深度 ...｜参考价值：高/中/低
 - 主池：BSC pancakeswap-infinity-clmm；当前 FDV $19.9M；流动性 $1.5M
 - 深度估算池：BSC uniswap pool
 - 买入深度：按池子流动性估算
@@ -523,7 +531,7 @@ CEX 相关信息必须避免被误读为官方确认。
 十、决策辅助与开盘前重点提醒
 - Tokenomics：重点复核初始流通、解锁节奏、空投领取时间，判断开盘抛压是否可能集中。
 - 合约与链上：复核最终 CA 是否与 Binance Alpha / 官方渠道一致，避免同名项目或临时池子误判。
-- 盘前 / 池子：关注 MEXC 盘前成交量是否有效、DEX 池子流动性是否足够、主池和深度估算池是否一致。
+- 盘前 / 池子：关注 MEXC / Aspecta 盘前成交量、深度和价格是否有效，DEX 池子流动性是否足够、主池和深度估算池是否一致。
 - 融资与成本：确认融资来源、轮次估值 / FDV 口径是否可靠，避免把 equity valuation 误当 token FDV。
 - CEX 与链上标签：CEX 钱包标签只作为链上观察，不等同官方充值或上线确认。
 - 临开盘复核：最终 Tokenomics、CA、池子流动性、盘前价、官方公告是否有新增变化。
@@ -613,6 +621,8 @@ API 获取入口：
 - [ ] Tokenomics 缺失时明确写未披露
 - [ ] 融资 / 孵化 / public sale / no VC allocation 说法有具体来源链接，并覆盖在来源文字上
 - [ ] VC 成本包含 unit cost + FDV；无法计算时明确说明
+- [ ] MEXC 和 Aspecta 盘前价格均已检查，缺失 / 不可访问也显式说明
+- [ ] MEXC 和 Aspecta 价格不一致时分别展示，并按成交量、深度和新鲜度判断参考价值
 - [ ] 盘前 / 池子 block 接入 monitor 工具
 - [ ] 主池和深度估算池分开
 - [ ] 买入深度每个 FDV 单独一行
