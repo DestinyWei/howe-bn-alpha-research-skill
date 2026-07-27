@@ -5,7 +5,7 @@
 ### Changed
 
 - 新增 Aspecta 盘前价数据源：Pre-TGE 调研必须在 MEXC 之外同时检查 `https://trade.aspecta.ai/`，记录价格、成交量 / 深度 / 流动性等上下文；两边价格不一致时分别列出并按成交量、深度和新鲜度判断参考价值。
-- 补充团队 LinkedIn 核验规则：找到项目 / 公司 LinkedIn 页后，必须继续检查 People / employees 与 founder-level 公开资料线索，避免只停在公司页而漏掉联创信息。
+- 补充团队 LinkedIn 核验规则：找到项目 / 公司 LinkedIn 页后，必须继续检查 People / employees 与 founder-level 公开资料线索；如果已找到或用户已提供 founder / co-founder / CEO LinkedIn URL，最终团队部分必须把人名做成可点击 LinkedIn 链接，不能只写 RootData / 官方简介。
 - 补充 Tokenomics 二次核验 comments：官方 whitepaper / litepaper / PDF 必须下载抽取；PDF 图表/截图中的 allocation、unlock、vesting、circulating supply 需要 OCR / vision 复核后，才能判定 Tokenomics 缺失。
 - 强化报告口径 comments：区分 Allocation、Available Supply、Circulating Supply、TGE unlock，避免把已解锁但未必立即流通的 future-activation / governance 池子直接当成开盘卖压。
 - 强化公共生图规则：`summary_dashboard`、`data_table`、`tokenomics_chart` 均默认使用 HTML/CSS → headless browser → 16:9 PNG，不再把 PIL / 手动画图作为默认路径。

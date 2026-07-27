@@ -198,6 +198,8 @@ Only cover founders / co-founders / CEO-level core people by default.
 
 If a project/company LinkedIn page is found, do not stop at the company page. Continue into the People / employees list and search LinkedIn/public web for `project or company name + founder/co-founder/CEO` to surface founder-level profiles associated with that page. When the company page exposes employee names but individual profiles are access-limited, include founder-level matches as `LinkedIn 待完整核验` instead of treating team data as missing.
 
+Hard requirement: when founder/co-founder/CEO LinkedIn URLs are found or provided by the user, the final team section must include those LinkedIn URLs as clickable markdown links on the person names. Do not omit available LinkedIn links from the team section, and do not replace them with only RootData / official bio summaries.
+
 If LinkedIn is available, link it directly on the person's name:
 
 ```text
